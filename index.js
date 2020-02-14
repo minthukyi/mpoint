@@ -6,7 +6,7 @@ const toYAML = require('winston-console-formatter');
 var request = require('request');
 
 function createLogger() {
-    const logger = new winston.Logger({
+    const logger = new winston.createLogger({
         level: "debug" // We recommend using the debug level for development
     });
 
