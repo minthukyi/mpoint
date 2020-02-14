@@ -10,7 +10,9 @@ function createLogger() {
         level: "debug" // We recommend using the debug level for development
     });
 
-    logger.add(winston.transports.Console, toYAML.config());
+    logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
     return logger;
 }
 
