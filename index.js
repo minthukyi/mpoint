@@ -102,7 +102,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "Columns": 6
             }, {
                 
-                "ActionType": "none",
+                "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
                 "TextOpacity": 60,
