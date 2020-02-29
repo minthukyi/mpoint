@@ -44,22 +44,10 @@ bot.onSubscribe(response => {
 });
 
 
-/*
-bot.onTextMessage(/./, (message, response) => {
-    checkUrlAvailability(response, message.text);
-});*/
-
-/*
-bot.onTextMessage(/^mingalarpar$/i, (message, response) =>
-    response.send(new TextMessage(`Min Ga Lar Par ${response.userProfile.name}.`)));
-
-bot.onTextMessage(/^how are you$/i, (message, response) =>
-    response.send(new TextMessage(`Fine`)));*/
-
 
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
-        response.send(new TextMessage(`Hi ${response.userProfile.name}`));
+        response.send(new TextMessage(`Hi ${response.userProfile.name} what can I help for you?`));
     }
     if(message.text === "hello"){
         response.send(new TextMessage(`Hello ${response.userProfile.name}`));      
