@@ -101,7 +101,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "http://www.google.com",
+                "ActionBody": "buy",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
