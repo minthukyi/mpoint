@@ -48,9 +48,23 @@ bot.onTextMessage(/./, (message, response) => {
     checkUrlAvailability(response, message.text);
 });*/
 
+/*
 bot.onTextMessage(/^mingalarpar$/i, (message, response) =>
     response.send(new TextMessage(`Min Ga Lar Par ${response.userProfile.name}.`)));
 
 bot.onTextMessage(/^how are you$/i, (message, response) =>
-    response.send(new TextMessage(`Fine`)));
+    response.send(new TextMessage(`Fine`)));*/
+
+
+bot.onTextMessage(/./, (message, response) => {
+    if(message.text === "hi"){
+        response.send(new TextMessage(`Hi ${response.userProfile.name}`));
+    }
+    if(message.text === "hello"){
+        response.send(new TextMessage(`Hello ${response.userProfile.name}`));
+    }
+});
+
+
+
 
