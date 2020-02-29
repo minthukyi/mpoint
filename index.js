@@ -92,7 +92,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "Columns": 6
             },
             {
-               
+                "ActionBody": "http://www.google.com",
                 "ActionType": "none",
                 "BgMediaType": "picture",
                 "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
@@ -101,7 +101,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                
+                "ActionBody": "http://www.google.com",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
