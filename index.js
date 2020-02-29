@@ -47,16 +47,16 @@ bot.onSubscribe(response => {
 
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
-        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!what can I help for you?`));
+        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What can I help for you?`));
     }
     if(message.text === "hello"){
-        response.send(new TextMessage(`Hello ${response.userProfile.name}!what can I help for you?`));      
+        response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What can I help for you?`));      
     }
     if (message.text === "Hello") {
-            response.send(new TextMessage(`Hello ${response.userProfile.name}`))
+            response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What can I help for you?`))
         }
     if(message.text === "Hi"){
-        response.send(new TextMessage(`Hi ${response.userProfile.name}`))
+        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What can I help for you?`))
     }
     if(message.text === "buy"){
         response.send(new TextMessage(`you click buy button`));
