@@ -62,7 +62,13 @@ bot.onTextMessage(/./, (message, response) => {
         response.send(new TextMessage(`Hi ${response.userProfile.name}`));
     }
     if(message.text === "hello"){
-        response.send(new TextMessage(`Hello ${response.userProfile.name}`));
+        response.send(new TextMessage(`Hello ${response.userProfile.name}`));      
+    }
+    if (message.text === "Hello") {
+            response.send(new TextMessage(`Hello ${response.userProfile.name}`))
+        }
+    if(message.text === "Hi"){
+        response.send(new TextMessage(`Hi ${response.userProfile.name}`))
     }
     if(message.text === "buy"){
         response.send(new TextMessage(`you click buy button`));
