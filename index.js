@@ -49,5 +49,8 @@ bot.onTextMessage(/./, (message, response) => {
 });*/
 
 bot.onTextMessage(/^mingalarpar$/i, (message, response) =>
-    response.send(new TextMessage(`Hi there ${response.userProfile.name}. I am robot`)));
+    response.send(new TextMessage(`Min Ga Lar Par ${response.userProfile.name}.`)));
+
+bot.onTextMessage(/^how are you$/i, (message, response) =>
+    response.send(new TextMessage(`Fine`)));
 
