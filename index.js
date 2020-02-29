@@ -1,6 +1,7 @@
 const ViberBot  = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const TextMessage = require('viber-bot').Message.Text;
+const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const winston = require('winston');
 const toYAML = require('winston-console-formatter');
 var request = require('request');
@@ -63,6 +64,33 @@ bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hello"){
         response.send(new TextMessage(`Hello ${response.userProfile.name}`));
     }
+    if(message.text === "sample"){
+        const SAMPLE_RICH_MEDIA = {
+            "ButtonsGroupColumns": 6,
+            "ButtonsGroupRows": 7,
+            "BgColor": "#FFFFFF",
+            "Buttons": [{
+                "ActionBody": "http://www.google.com",
+                "ActionType": "open-url",
+                "BgMediaType": "picture",
+                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 4,
+                "Columns": 6
+            }, {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "open-url",
+                "BgColor": "#85bb65",
+                "Text": "Buy",
+                "TextOpacity": 60,
+                "Rows": 3,
+                "Columns": 6
+            }]
+        };
+        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
+    }
+
 });
 
 
