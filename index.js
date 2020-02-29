@@ -64,12 +64,16 @@ bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hello"){
         response.send(new TextMessage(`Hello ${response.userProfile.name}`));
     }
+    if(message.text === "buy"){
+        response.send(new TextMessage(`you click buy button`));
+    }
     if(message.text === "sample"){
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
             "ButtonsGroupRows": 7,
             "BgColor": "#FFFFFF",
-            "Buttons": [{
+            "Buttons": [
+            {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "open-url",
                 "BgMediaType": "picture",
@@ -86,7 +90,27 @@ bot.onTextMessage(/./, (message, response) => {
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
-            }]
+            },
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "open-url",
+                "BgMediaType": "picture",
+                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "open-url",
+                "BgColor": "#85bb65",
+                "Text": "Buy",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            }
+
+            ]
         };
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
     }
