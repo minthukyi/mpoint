@@ -44,7 +44,6 @@ bot.onSubscribe(response => {
 });
 
 
-
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
         response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What would you like to buy from our shop?`));
@@ -127,7 +126,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "none",
                 "BgMediaType": "picture",
-                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "Image": "myapp/mpoint/photos/mpt.jpg",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
                 "Rows": 6,
