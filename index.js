@@ -47,7 +47,7 @@ bot.onSubscribe(response => {
 
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
-        response.send(new TextMessage(`Lee lr Sis Lwin Htet!What can I help for you?`));
+        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What can I help for you?`));
     }
     if(message.text === "hello"){
         response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What can I help for you?`));      
