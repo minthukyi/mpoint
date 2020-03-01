@@ -102,7 +102,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
-            }
+            },
 
             {
                 "ActionBody": "http://www.google.com",
@@ -121,7 +121,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
-            }
+            },
 
             {
                 "ActionBody": "http://www.google.com",
@@ -140,7 +140,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
-            }
+            },
 
             ]
         };
