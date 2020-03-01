@@ -126,7 +126,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "none",
                 "BgMediaType": "picture",
-                "Image": "myapp/mpoint/photos/mpt.jpg",
+                "Image": "../myapp/mpoint/photos/mpt.jpg",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
                 "Rows": 6,
