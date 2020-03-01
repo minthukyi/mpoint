@@ -47,16 +47,16 @@ bot.onSubscribe(response => {
 
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
-        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What can I help for you?`));
+        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What would you like to buy from our shop?`));
     }
     if(message.text === "hello"){
-        response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What can I help for you?`));      
+        response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What would you like to buy from our shop?`));      
     }
     if (message.text === "Hello") {
-            response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What can I help for you?`))
+            response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name}!What would you like to buy from our shop?`))
         }
     if(message.text === "Hi"){
-        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What can I help for you?`))
+        response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name}!What would you like to buy from our shop?`))
     }
     if(message.text === "buy"){
         response.send(new TextMessage(`you click buy button`));
@@ -85,6 +85,44 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 1,
                 "Columns": 6
             },
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "none",
+                "BgMediaType": "picture",
+                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "buy",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Buy",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            }
+
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "none",
+                "BgMediaType": "picture",
+                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "buy",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Buy",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            }
+
             {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "none",
