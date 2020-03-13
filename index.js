@@ -59,7 +59,6 @@ bot.onTextMessage(/./, (message, response) => {
     }
     
     if(message.text === "Phone bills"){
-        if(message.text === "phone bills")
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
             "ButtonsGroupRows": 7,
