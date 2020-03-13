@@ -144,6 +144,7 @@ bot.onTextMessage(/./, (message, response) => {
             ]
         };
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
+        response.send(new TextMessage(`These are different type of phone bills what would you like to buy?`));
     }
 
 });
