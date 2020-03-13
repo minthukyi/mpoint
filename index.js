@@ -57,10 +57,9 @@ bot.onTextMessage(/./, (message, response) => {
     if(message.text === "Hi"){
         response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`))
     }
-    if(message.text === "buy"){
-        response.send(new TextMessage(`you click buy button`));
-    }
-    if(message.text === "Phone bills"){
+    
+    if(message.text === "Phone bills")
+        if(message.text === "phone bills"){
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
             "ButtonsGroupRows": 7,
@@ -144,7 +143,7 @@ bot.onTextMessage(/./, (message, response) => {
             ]
         };
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
-        response.send(new TextMessage(`These are different type of phone bills what would you like to buy?`));
+        response.send(new TextMessage(`These are different types of phone bills what would you like to buy?`));
     }
 
 });
