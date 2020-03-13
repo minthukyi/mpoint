@@ -2,6 +2,7 @@ const ViberBot  = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const TextMessage = require('viber-bot').Message.Text;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
+const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const winston = require('winston');
 const toYAML = require('winston-console-formatter');
 var request = require('request');
@@ -145,7 +146,7 @@ bot.onTextMessage(/./, (message, response) => {
         response.send(new TextMessage(`These are different types of phone bills what would you like to buy?`));
     }
 
-    if(message.text === "sample") {
+    if(message.text === "sample"){
         const SAMPLE_KEYBOARD = {
     "Type": "keyboard",
     "Revision": 1,
