@@ -76,10 +76,10 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "MPT",
+                "ActionBody": "http://www.google.com",
                 "ActionType": "open-url",
                 "BgColor": "#85bb65",
-                "Text": "Buy",
+                "Text": "MPT",
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
@@ -94,10 +94,10 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "Telenor",
+                "ActionBody": "buy",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Buy",
+                "Text": "Ooredoo",
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
@@ -113,10 +113,10 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "Ooredoo",
+                "ActionBody": "buy",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Buy",
+                "Text": "Telenor",
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
@@ -132,10 +132,10 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "Mytel",
+                "ActionBody": "buy",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Buy",
+                "Text": "Mytel",
                 "TextOpacity": 60,
                 "Rows": 1,
                 "Columns": 6
