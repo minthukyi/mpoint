@@ -76,7 +76,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "http://www.google.com",
+                "ActionBody": "MPT",
                 "ActionType": "open-url",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
@@ -88,13 +88,13 @@ bot.onTextMessage(/./, (message, response) => {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "none",
                 "BgMediaType": "picture",
-                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "Telenor",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
@@ -107,13 +107,13 @@ bot.onTextMessage(/./, (message, response) => {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "none",
                 "BgMediaType": "picture",
-                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "Ooredoo",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
@@ -126,13 +126,13 @@ bot.onTextMessage(/./, (message, response) => {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "none",
                 "BgMediaType": "picture",
-                "Image": "../myapp/mpoint/photos/mpt.jpg",
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "Mytel",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Buy",
