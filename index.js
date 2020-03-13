@@ -58,8 +58,8 @@ bot.onTextMessage(/./, (message, response) => {
         response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`))
     }
     
-    if(message.text === "Phone bills")
-        if(message.text === "phone bills"){
+    if(message.text === "Phone bills"){
+        if(message.text === "phone bills")
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
             "ButtonsGroupRows": 7,
