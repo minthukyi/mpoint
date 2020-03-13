@@ -60,7 +60,7 @@ bot.onTextMessage(/./, (message, response) => {
     if(message.text === "buy"){
         response.send(new TextMessage(`you click buy button`));
     }
-    if(message.text === "sample"){
+    if(message.text === "Phone bills"){
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
             "ButtonsGroupRows": 7,
@@ -70,7 +70,7 @@ bot.onTextMessage(/./, (message, response) => {
                 "ActionBody": "http://www.google.com",
                 "ActionType": "open-url",
                 "BgMediaType": "picture",
-                "Image": "https://static.dezeen.com/uploads/2020/01/sony-vision-s-electric-car-technology_dezeen_2364_hero-1.jpg",
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
                 "Rows": 6,
