@@ -145,6 +145,27 @@ bot.onTextMessage(/./, (message, response) => {
         response.send(new TextMessage(`These are different types of phone bills what would you like to buy?`));
     }
 
+    if(message.text === "sample") {
+        const SAMPLE_KEYBOARD = {
+    "Type": "keyboard",
+    "Revision": 1,
+    "Buttons": [
+        {
+            "Columns": 3,
+            "Rows": 2,
+            "BgColor": "#e6f5ff",
+            "BgMedia": "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
+            "BgMediaType": "picture",
+            "BgLoop": true,
+            "ActionType": "reply",
+            "ActionBody": "Yes"
+        }
+    ]
+};
+
+const message = new KeyboardMessage(SAMPLE_KEYBOARD, [optionalTrackingData]);
+    }
+
 });
 
 
