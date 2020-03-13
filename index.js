@@ -147,8 +147,8 @@ bot.onTextMessage(/./, (message, response) => {
         
     }
 
-    if(message.text === "sample"){
-        const SAMPLE_KEYBOARD = {
+   
+     const SAMPLE_KEYBOARD = {
     "Type": "keyboard",
     "Revision": 1,
     "Buttons": [
@@ -166,7 +166,7 @@ bot.onTextMessage(/./, (message, response) => {
 };
 
 const message = new KeyboardMessage(SAMPLE_KEYBOARD, [optionalTrackingData]);
-    }
+    
 
 });
 
