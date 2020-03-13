@@ -59,6 +59,8 @@ bot.onTextMessage(/./, (message, response) => {
         response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`))
     }
     
+    }
+
     if(message.text === "Phone bills"){
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
@@ -142,8 +144,9 @@ bot.onTextMessage(/./, (message, response) => {
 
             ]
         };
-        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
         response.send(new TextMessage(`These are different types of phone bills what would you like to buy?`));
+        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
+        
     }
 
     if(message.text === "sample"){
