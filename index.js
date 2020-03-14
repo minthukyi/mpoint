@@ -61,94 +61,95 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
     }
     
   
-  if(message.text === "Phone bills"){
-        const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 6,
-            "ButtonsGroupRows": 7,
-            "BgColor": "#FFFFFF",
-            "Buttons": [
-            {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "open-url",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "open-url",
-                "BgColor": "#85bb65",
-                "Text": "MPT",
-                "TextOpacity": 60,
-                "Rows": 1,
-                "Columns": 6
-            },
-            {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
-                "BgMediaType": "picture",
-                "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "buy",
-                "ActionType": "reply",
-                "BgColor": "#85bb65",
-                "Text": "Ooredoo",
-                "TextOpacity": 60,
-                "Rows": 1,
-                "Columns": 6
-            },
-
-            {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "buy",
-                "ActionType": "reply",
-                "BgColor": "#85bb65",
-                "Text": "Telenor",
-                "TextOpacity": 60,
-                "Rows": 1,
-                "Columns": 6
-            },
-
-            {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "buy",
-                "ActionType": "reply",
-                "BgColor": "#85bb65",
-                "Text": "Mytel",
-                "TextOpacity": 60,
-                "Rows": 1,
-                "Columns": 6
-            },
-
-            ]
-        };
-        response.send(new TextMessage(`These are different types of phone bills what would you like to buy?`));
-        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
-        
-    } 
-               
+  {
+   "receiver":"nsId6t9MWy3mq09RAeXiug==",
+   "type":"rich_media",
+   "min_api_version":2,
+   "rich_media":{
+      "Type":"rich_media",
+      "ButtonsGroupColumns":6,
+      "ButtonsGroupRows":7,
+      "BgColor":"#FFFFFF",
+      "Buttons":[
+         {
+            "Columns":6,
+            "Rows":3,
+            "ActionType":"open-url",
+            "ActionBody":"https://www.google.com",
+            "Image":"http://html-test:8080/myweb/guy/assets/imageRMsmall2.png"
+         },
+         {
+            "Columns":6,
+            "Rows":2,
+            "Text":"<font color=#323232><b>Headphones with Microphone, On-ear Wired earphones</b></font><font color=#777777><br>Sound Intone </font><font color=#6fc133>$17.99</font>",
+            "ActionType":"open-url",
+            "ActionBody":"https://www.google.com",
+            "TextSize":"medium",
+            "TextVAlign":"middle",
+            "TextHAlign":"left"
+         },
+         {
+            "Columns":6,
+            "Rows":1,
+            "ActionType":"reply",
+            "ActionBody":"https://www.google.com",
+            "Text":"<font color=#ffffff>Buy</font>",
+            "TextSize":"large",
+            "TextVAlign":"middle",
+            "TextHAlign":"middle",
+            "Image":"https://s14.postimg.org/4mmt4rw1t/Button.png"
+         },
+         {
+            "Columns":6,
+            "Rows":1,
+            "ActionType":"reply",
+            "ActionBody":"https://www.google.com",
+            "Text":"<font color=#8367db>MORE DETAILS</font>",
+            "TextSize":"small",
+            "TextVAlign":"middle",
+            "TextHAlign":"middle"
+         },
+         {
+            "Columns":6,
+            "Rows":3,
+            "ActionType":"open-url",
+            "ActionBody":"https://www.google.com",
+            "Image":"https://s16.postimg.org/wi8jx20wl/image_RMsmall2.png"
+         },
+         {
+            "Columns":6,
+            "Rows":2,
+            "Text":"<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
+            "ActionType":"open-url",
+            "ActionBody":"https://www.google.com",
+            "TextSize":"medium",
+            "TextVAlign":"middle",
+            "TextHAlign":"left"
+         },
+         {
+            "Columns":6,
+            "Rows":1,
+            "ActionType":"reply",
+            "ActionBody":"https://www.google.com",
+            "Text":"<font color=#ffffff>Buy</font>",
+            "TextSize":"large",
+            "TextVAlign":"middle",
+            "TextHAlign":"middle",
+            "Image":"https://s14.postimg.org/4mmt4rw1t/Button.png"
+         },
+         {
+            "Columns":6,
+            "Rows":1,
+            "ActionType":"reply",
+            "ActionBody":"https://www.google.com",
+            "Text":"<font color=#8367db>MORE DETAILS</font>",
+            "TextSize":"small",
+            "TextVAlign":"middle",
+            "TextHAlign":"middle"
+         }
+      ]
+   }
+}
 });
 
 
