@@ -45,11 +45,7 @@ bot.onSubscribe(response => {
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
     onFinish(new TextMessage(`Hi, ${userProfile.name}! Nice to meet you.`)));
-
-bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
-    onFinish(new TextMessage(`Thanks`), {
-        saidThanks: true
-    }));
+ 
 
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
