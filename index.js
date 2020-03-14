@@ -147,6 +147,24 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
         
     }
+
+    {
+   "receiver":"01234567890A=",
+   "type":"text",
+   "text":"Hello world",
+   "keyboard":{
+      "Type":"keyboard",
+      "DefaultHeight":true,
+      "Buttons":[
+         {
+            "ActionType":"reply",
+            "ActionBody":"reply to me",
+            "Text":"Key text",
+            "TextSize":"regular"
+         }
+      ]
+   }
+}
 });
 
 
