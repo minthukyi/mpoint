@@ -60,7 +60,8 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
         response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
     }
     
-  
+   if(message.text === "Phone bills"){
+          const SAMPLE_RICH_MEDIA = {
   {
    "receiver":"nsId6t9MWy3mq09RAeXiug==",
    "type":"rich_media",
@@ -150,6 +151,8 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
       ]
    }
 }
+ }
+ }
 });
 
 
