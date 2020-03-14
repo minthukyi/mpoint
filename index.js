@@ -2,7 +2,6 @@ const ViberBot  = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const TextMessage = require('viber-bot').Message.Text;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
-const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const winston = require('winston');
 const toYAML = require('winston-console-formatter');
 var request = require('request');
@@ -44,6 +43,13 @@ bot.onSubscribe(response => {
     say(response, `Hi there ${response.userProfile.name}. I am ${bot.name}! Feel free to ask me if a web site is down for everyone or just you. Just send me a name of a website and I'll do the rest!`);
 });
 
+bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
+    onFinish(new TextMessage(`Hi, ${userProfile.name}! Nice to meet you.`)));
+
+bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
+    onFinish(new TextMessage(`Thanks`), {
+        saidThanks: true
+    }));
 
 bot.onTextMessage(/./, (message, response) => {
     if(message.text === "hi"){
@@ -147,27 +153,7 @@ bot.onTextMessage(/./, (message, response) => {
         
     }
 
-    if(message.text === "b") {
-     const SAMPLE_KEYBOARD = {
-    "Type": "keyboard",
-    "Revision": 1,
-    "Buttons": [
-        {
-            "Columns": 3,
-            "Rows": 2,
-            "BgColor": "#e6f5ff",
-            "BgMedia": "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
-            "BgMediaType": "picture",
-            "BgLoop": true,
-            "ActionType": "reply",
-            "ActionBody": "Yes"
-        }
-    ]
-};
-
-const message = new KeyboardMessage(SAMPLE_KEYBOARD, [optionalTrackingData]);
-   } 
-
+    
 });
 
 
