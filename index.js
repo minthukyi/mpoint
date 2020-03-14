@@ -44,7 +44,7 @@ bot.onSubscribe(response => {
 });
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
-    onFinish(new TextMessage(`Hi, ${userProfile.name}! Nice to meet you.`)));
+    onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! What would you like to buy from our shop?`)));
  
 
 bot.onTextMessage(/./, (message, response) => {
