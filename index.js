@@ -1,6 +1,7 @@
 const ViberBot  = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const TextMessage = require('viber-bot').Message.Text;
+const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const winston = require('winston');
 const toYAML = require('winston-console-formatter');
@@ -46,23 +47,21 @@ bot.onSubscribe(response => {
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) => {
     onFinish([new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`), new KeyboardMessage({
-//bot.sendMessage(userProfile.userProfile, new TextMessage('Mingalarpar Welcome from M-Points',
- 
-       "Type": "keyboard",
+     "Type": "keyboard",
      "InputFieldState": "hidden",
-      "DefaultHeight": false,
-       "BgColor": '#006600',
-        "Buttons": [
-      {
+     "DefaultHeight": false,
+     "BgColor": '#006600',
+     "Buttons": [
+        {
             "Columns": 6,
             "Rows": 1,
-           "BgColor": '#009900',
+            "BgColor": '#009900',
             "ActionType": "reply",
-           "ActionBody": "Hi",
+            "ActionBody": "Hi",
             "Text": "<font color='#ffffff'>Get Started</font>"
         }
-        ]
-     }, "","","", 7);
+      ]
+     }, "","","", 7)
     ]);
    });
     
