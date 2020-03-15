@@ -45,18 +45,18 @@ bot.onSubscribe(response => {
 
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
-    onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`)));
-
+    //onFinish(new TextMessage)(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`));
+    onFinish[new TextMessage('Mingalarpar')new KeyboardMessage({type keyboard....})]
     {
         "Type": "keyboard",
         "InputFieldState": "hidden",
         "DefaultHeight": false,
-        "BgColor": #006600,
+        "BgColor": '#006600',
         "Buttons": [
         {
             "Columns": 6,
             "Rows": 1,
-            "BgColor": #009900,
+            "BgColor": '#009900',
             "ActionType": "reply",
             "ActionBody": "Hi",
             "Text": "<font color='#ffffff'>Get Started</font>"
