@@ -47,15 +47,7 @@ bot.onSubscribe(response => {
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
     onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`)));
 
-keyboard: {
-             "Type": "keyboard",
-             "DefaultHeight": true,
-             "Buttons": [{
-                 "ActionType": "reply",
-                 "ActionBody": "Get started",
-             }]
-         }
- 
+
   bot.onTextMessage(/./, (message, response) => {
    //if(message.text === "hi"){
       // response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
