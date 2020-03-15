@@ -44,8 +44,8 @@ bot.onSubscribe(response => {
 });
 
 
-//bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
-    //onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`)));
+bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
+    onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`)));
 
 bot.on(BotEvents.CONVERSATION_STARTED,(userProfile, isSubscribed, context, onFinish) =>{
     bot.sendMessage(userProfile.userProfile, new TextMessage('Get Started',
@@ -61,7 +61,7 @@ bot.on(BotEvents.CONVERSATION_STARTED,(userProfile, isSubscribed, context, onFin
             "BgColor": mainColor,
             "ActionType": "reply",
             "ActionBody": "Hi",
-            "Text": "<font color='#ffffff'>Get Started</font>
+            "Text": "<font color='#ffffff'>Get Started</font>"
         }
         ]
     }, "","","", 7));
