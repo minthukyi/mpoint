@@ -38,8 +38,13 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
 
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
   bot.sendMessage(userProfile.userProfile, new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`,
+<<<<<<< HEAD
             {
                 "Type": "keyboard",
+=======
+			{
+				"Type": "keyboard",
+>>>>>>> 4ef75354becd2c47da1b632895ca2f66ccde824f
                 "InputFieldState": "hidden",
                 "DefaultHeight": false,
                 "BgColor": '#006600',
@@ -53,7 +58,11 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                         "Text": "<font color='#ffffff'>Get Started</font>"
              }
             ]
+<<<<<<< HEAD
         }, "","","", 7));
+=======
+		}, "","","", 7));
+>>>>>>> 4ef75354becd2c47da1b632895ca2f66ccde824f
 });
     
   bot.onTextMessage(/./, (message, response) => {
