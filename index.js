@@ -48,10 +48,8 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
 
  
   bot.onTextMessage(/./, (message, response) => {
-   //if(message.text === "hi"){
-     if (message.text.toLowerCase().indexOf('hi') >= 0){response.send('Hi ' + response.message.user.name +' thank you for your message: ' + response.message.text);} 
-    else{response.send('Sorry I dont understand you...');});
-       //response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
+   if(message.text === "hi"){
+       response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
    // }
     //if(message.text === "hello"){
       // response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));      
