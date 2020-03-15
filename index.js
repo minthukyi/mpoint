@@ -1,6 +1,7 @@
 const ViberBot  = require('viber-bot').Bot;
 const BotEvents = require('viber-bot').Events;
 const TextMessage = require('viber-bot').Message.Text;
+const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const winston = require('winston');
 const toYAML = require('winston-console-formatter');
