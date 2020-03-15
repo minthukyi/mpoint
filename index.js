@@ -64,7 +64,7 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) => {
         ]
      }, "","","", 7);
     ]);
-   };
+   });
     
   bot.onTextMessage(/./, (message, response) => {
    //if(message.text === "hi"){
