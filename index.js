@@ -46,7 +46,7 @@ bot.onSubscribe(response => {
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
     //onFinish(new TextMessage)(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`));
-    onFinish[new TextMessage('Mingalarpar')new KeyboardMessage({type keyboard....})]
+    onFinish[new TextMessage('Mingalarpar'),new KeyboardMessage({
     {
         "Type": "keyboard",
         "InputFieldState": "hidden",
@@ -64,7 +64,7 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
         ]
     }, "","","", 7;
               
-};
+]});
     
   bot.onTextMessage(/./, (message, response) => {
    //if(message.text === "hi"){
