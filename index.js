@@ -45,25 +45,25 @@ bot.onSubscribe(response => {
 });
 
 
-bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) => {
-    onFinish([new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`), new KeyboardMessage({
-     "Type": "keyboard",
-     "InputFieldState": "hidden",
-     "DefaultHeight": false,
-     "BgColor": '#006600',
-     "Buttons": [
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": '#009900',
-            "ActionType": "reply",
-            "ActionBody": "Hi",
-            "Text": "<font color='#ffffff'>Get Started</font>"
-        }
-      ]
-     }, "","","", 7)
-    ]);
-   });
+bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
+  bot.sendMessage(userProfile.userProfile, new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`,
+            {
+                "Type": "keyboard",
+                "InputFieldState": "hidden",
+                "DefaultHeight": false,
+                "BgColor": '#006600',
+                "Buttons": [
+                    {
+                        "Columns": 6,
+                        "Rows": 1,
+                        "BgColor": '#009900',
+                        "ActionType": "reply",
+                        "ActionBody": "Hi",
+                        "Text": "<font color='#ffffff'>Get Started</font>"
+             }
+            ]
+        }, "","","", 7));
+});
     
   bot.onTextMessage(/./, (message, response) => {
    //if(message.text === "hi"){
