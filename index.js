@@ -23,7 +23,7 @@ const logger = createLogger();
 // Creating the bot with access token, name and avatar
 const bot = new ViberBot(logger, {
     authToken: "4b108d593627d1be-572b518d955f6fd1-d720dc880bcc9bc", // <--- Paste your token here
-    name: "Is It Up",  // <--- Your bot name here
+    name: "M-Points",  // <--- Your bot name here
     avatar: "http://api.adorable.io/avatar/200/isitup" // It is recommended to be 720x720, and no more than 100kb.
 }); 
 
