@@ -36,15 +36,6 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
     logger.debug('Could not find the now.sh/Heroku environment variables. Please make sure you followed readme guide.');
 }
 
-function say(response, message) {
-    response.send(new TextMessage(message));
-}
-
-bot.onSubscribe(response => {
-    say(response, `Hi there ${response.userProfile.name}. I am ${bot.name}! Feel free to ask me if a web site is down for everyone or just you. Just send me a name of a website and I'll do the rest!`);
-});
-
-
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
   bot.sendMessage(userProfile.userProfile, new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`,
             {
@@ -66,18 +57,6 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 });
     
   bot.onTextMessage(/./, (message, response) => {
-   //if(message.text === "hi"){
-      // response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
-   // }
-    //if(message.text === "hello"){
-      // response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));      
- //   }
- //   if (message.text === "Hello") {
-     //       response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
-     //   }
-  //  if(message.text === "Hi"){
-      //  response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
-   //}
     
    if(message.text === "Phone bills"){
         const SAMPLE_RICH_MEDIA = {
@@ -169,7 +148,3 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
 
 });
-
-
-
-
