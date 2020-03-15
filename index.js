@@ -46,17 +46,10 @@ bot.onSubscribe(response => {
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
     onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`)));
-
-function handlePostback(sender_psid, received_postback){
-    console.log('ok')
-     let response;
-     // Get the payload for the postback
-      let payload = received_postback.payload;
-     // Set the response based on the postback payload
-
-      if(payload === 'get_started') {
-        response = {"text": "Hello. "+user.first_name+""+user.last_name+".It's so nice to meet you."}
-      }
+{
+    "get_started":{
+        "payload":"<GET_STARTED_PAYLOAD>" 
+    }
 }
  
   bot.onTextMessage(/./, (message, response) => {
