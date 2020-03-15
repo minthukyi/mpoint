@@ -45,7 +45,7 @@ bot.onSubscribe(response => {
 
 
 bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
-    onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! What would you like to buy from our shop?`)));
+    onFinish(new TextMessage(`Mingalarpar ${userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`)));
 
 function handlePostback(sender_psid, received_postback){
     console.log('ok')
