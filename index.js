@@ -51,19 +51,19 @@ bot.onConversationStarted((userProfile, isSubscribed, context, onFinish) =>
     //else{response.send('Sorry I dont understand you...');});
  
 
-  //bot.onTextMessage(/./, (message, response) => {
-   // if(message.text === "hi"){
-       // response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
+  bot.onTextMessage(/./, (message, response) => {
+   if(message.text === "hi"){
+       //response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
    // }
-   // if(message.text === "hello"){
-       // response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));      
-    //}
-    //if (message.text === "Hello") {
-            //response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
-       // }
+    //if(message.text === "hello"){
+      // response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));      
+ //   }
+ //   if (message.text === "Hello") {
+     //       response.send(new TextMessage(`Hello Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
+     //   }
   //  if(message.text === "Hi"){
-       // response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
-  //  }
+      //  response.send(new TextMessage(`Hi Mingalarpar ${response.userProfile.name} Welcome from M-Points!What would you like to buy from our shop?`));
+   }
     
    if(message.text === "Phone bills"){
         const SAMPLE_RICH_MEDIA = {
