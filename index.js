@@ -58,7 +58,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
     
   bot.onTextMessage(/./, (message, response) => {
     
-   if(message.text === "Phone bills"){
+   if(message === "Go To Shop"){
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
             "ButtonsGroupRows": 7,
