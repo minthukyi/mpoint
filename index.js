@@ -141,10 +141,96 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
             ]
         };
-        response.send(new TextMessage(`These are different types of phone bills what would you like to buy?`));
+        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
         
     }
 
+     if(message.text === "MPT"){
+        const SAMPLE_RICH_MEDIA = {
+            "ButtonsGroupColumns": 6,
+            "ButtonsGroupRows": 7,
+            "BgColor": "#FFFFFF",
+            "Buttons": [
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "open-url",
+                "BgMediaType": "picture",
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "open-url",
+                "BgColor": "#85bb65",
+                "Text": "MPT-1000",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            },
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "none",
+                "BgMediaType": "picture",
+                "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "buy",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "MPT-3000",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            },
 
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "none",
+                "BgMediaType": "picture",
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "buy",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "MPT_5000",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            },
+
+            {
+                "ActionBody": "http://www.google.com",
+                "ActionType": "none",
+                "BgMediaType": "picture",
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
+                "BgColor": "#000000",
+                "TextOpacity": 60,
+                "Rows": 6,
+                "Columns": 6
+            }, {
+                "ActionBody": "buy",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "MPT-10000",
+                "TextOpacity": 60,
+                "Rows": 1,
+                "Columns": 6
+            },
+
+            ]
+        };
+        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
+        
+    }
 });
