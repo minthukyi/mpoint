@@ -65,8 +65,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "open-url",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
                 "BgColor": "#000000",
@@ -74,8 +74,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "open-url",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT",
                 "TextOpacity": 60,
@@ -83,8 +83,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Columns": 6
             },
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
+                "ActionBody": "Ooredoo",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
                 "BgColor": "#000000",
@@ -92,7 +92,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "Ooredoo",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo",
@@ -102,8 +102,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             },
 
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
+                "ActionBody": "Telenor",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
                 "BgColor": "#000000",
@@ -111,7 +111,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "Telenor",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Telenor",
@@ -121,8 +121,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             },
 
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
+                "ActionBody": "Mytel",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
                 "BgColor": "#000000",
@@ -130,7 +130,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "Mytel",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Mytel",
@@ -148,83 +148,39 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
      if(message.text === "MPT"){
         const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 6,
-            "ButtonsGroupRows": 7,
+            "ButtonsGroupColumns": 3,
+            "ButtonsGroupRows": 1,
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "MPT",
-                "ActionType": "reply",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "MPT",
+                "ActionBody": "1000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-1000",
-                "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
+                "Columns": 3
             },
             {
-                "ActionBody": "MPT",
-                "ActionType": "reply",
-                "BgMediaType": "picture",
-                "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "MPT",
+                "ActionBody": "3000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-3000",
-                "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
-            },
-
-            {
-                "ActionBody": "MPT",
-                "ActionType": "reply",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "MPT",
+                "Columns": 3
+            },{
+                "ActionBody": "5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "MPT_5000",
-                "TextOpacity": 60,
+                "Text": "MPT-5000",
                 "Rows": 1,
-                "Columns": 6
-            },
-
-            {
-                "ActionBody": "MPT",
-                "ActionType": "reply",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
-                "BgColor": "#000000",
-                "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
-            }, {
-                "ActionBody": "MPT",
+                "Columns": 3
+            },{
+                "ActionBody": "10000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-10000",
-                "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
+                "Columns": 3
             },
 
             ]
