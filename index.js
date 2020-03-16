@@ -153,8 +153,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "open-url",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
                 "BgColor": "#000000",
@@ -162,8 +162,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "open-url",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-1000",
                 "TextOpacity": 60,
@@ -171,8 +171,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Columns": 6
             },
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
                 "BgColor": "#000000",
@@ -180,7 +180,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "MPT",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-3000",
@@ -190,8 +190,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             },
 
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
                 "BgColor": "#000000",
@@ -199,7 +199,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "MPT",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT_5000",
@@ -209,8 +209,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             },
 
             {
-                "ActionBody": "http://www.google.com",
-                "ActionType": "none",
+                "ActionBody": "MPT",
+                "ActionType": "reply",
                 "BgMediaType": "picture",
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
                 "BgColor": "#000000",
@@ -218,7 +218,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Rows": 6,
                 "Columns": 6
             }, {
-                "ActionBody": "buy",
+                "ActionBody": "MPT",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-10000",
