@@ -50,7 +50,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                         "BgColor": '#009900',
                         "ActionType": "reply",
                         "ActionBody": "Hi",
-                        "Text": "<font color='#ffffff'>Get Started</font>"
+                        "Text": "<font color='#ffffff'>Go To Shop</font>"
              }
             ]
         }, "","","", 7));
