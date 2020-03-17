@@ -80,7 +80,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "MPT",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
+                "Columns": 5
             },
             {
                 "ActionBody": "Ooredoo",
@@ -98,7 +98,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "Ooredoo",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
+                "Columns": 5
             },
 
             {
@@ -117,7 +117,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "Telenor",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
+                "Columns": 5
             },
 
             {
@@ -136,7 +136,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "Mytel",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 6
+                "Columns": 5
             },
 
             ]
