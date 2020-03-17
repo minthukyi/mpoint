@@ -153,7 +153,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "1000",
+                "ActionBody": "MPT-1000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-1000",
@@ -161,21 +161,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Columns": 4
             },
             {
-                "ActionBody": "3000",
+                "ActionBody": "MPT-3000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-3000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "5000",
+                "ActionBody": "MPT-5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-5000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "10000",
+                "ActionBody": "MPT-10000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-10000",
@@ -196,7 +196,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "1000",
+                "ActionBody": "Ooredoo-1000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-1000",
@@ -204,21 +204,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Columns": 4
             },
             {
-                "ActionBody": "3000",
+                "ActionBody": "Ooredoo-3000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-3000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "5000",
+                "ActionBody": "Ooredoo-5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-5000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "10000",
+                "ActionBody": "Ooredoo-10000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-10000",
@@ -238,7 +238,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "1000",
+                "ActionBody": "Telenor-1000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Telenor-1000",
@@ -246,21 +246,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Columns": 4
             },
             {
-                "ActionBody": "3000",
+                "ActionBody": "Telenor-3000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Telenor-3000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "5000",
+                "ActionBody": "Telenor-5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Telenor-5000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "10000",
+                "ActionBody": "Telenor-10000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Telenor-10000",
@@ -280,7 +280,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "BgColor": "#FFFFFF",
             "Buttons": [
             {
-                "ActionBody": "1000",
+                "ActionBody": "Mytel-1000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Mytel-1000",
@@ -288,21 +288,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Columns": 4
             },
             {
-                "ActionBody": "3000",
+                "ActionBody": "Mytel-3000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Mytel-3000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "5000",
+                "ActionBody": "Mytel-5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Mytel-5000",
                 "Rows": 1,
                 "Columns": 4
             },{
-                "ActionBody": "10000",
+                "ActionBody": "Mytel-10000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Mytel-10000",
