@@ -71,8 +71,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
-                "Rows": 6,
-                "Columns": 6
+                "Rows": 5,
+                "Columns": 5
             }, {
                 "ActionBody": "MPT",
                 "ActionType": "reply",
@@ -98,7 +98,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "Ooredoo",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 5
+                "Columns": 6
             },
 
             {
@@ -117,7 +117,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "Telenor",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 5
+                "Columns": 6
             },
 
             {
@@ -136,7 +136,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "Mytel",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 5
+                "Columns": 6
             },
 
             ]
@@ -156,8 +156,6 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "MPT-1000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3kFg5hREh-RwYKclgeTJ7c8i3w0l_85tlDbdpYLIZZEXBMFe8",
                 "Text": "MPT-1000",
                 "Rows": 1,
                 "Columns": 4
