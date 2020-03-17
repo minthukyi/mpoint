@@ -191,7 +191,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
       
       if(message.text === "Ooredoo"){
         const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 3,
+            "ButtonsGroupColumns": 4,
             "ButtonsGroupRows": 1,
             "BgColor": "#FFFFFF",
             "Buttons": [
@@ -201,7 +201,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-1000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },
             {
                 "ActionBody": "3000",
@@ -209,14 +209,14 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-3000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-5000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "10000",
                 "ActionType": "reply",
@@ -233,7 +233,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
     }
        if(message.text === "Telenor"){
         const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 3,
+            "ButtonsGroupColumns": 4,
             "ButtonsGroupRows": 1,
             "BgColor": "#FFFFFF",
             "Buttons": [
@@ -243,7 +243,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Telenor-1000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },
             {
                 "ActionBody": "3000",
@@ -251,14 +251,14 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Telenor-3000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "Telenor-5000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "10000",
                 "ActionType": "reply",
@@ -275,7 +275,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
     }
        if(message.text === "Mytel"){
         const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 3,
+            "ButtonsGroupColumns": 4,
             "ButtonsGroupRows": 1,
             "BgColor": "#FFFFFF",
             "Buttons": [
@@ -285,7 +285,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Mytel-1000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },
             {
                 "ActionBody": "3000",
@@ -300,7 +300,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Mytel-5000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "10000",
                 "ActionType": "reply",
