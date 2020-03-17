@@ -148,7 +148,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
      if(message.text === "MPT"){
         const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 3,
+            "ButtonsGroupColumns": 4,
             "ButtonsGroupRows": 1,
             "BgColor": "#FFFFFF",
             "Buttons": [
@@ -158,7 +158,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "MPT-1000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },
             {
                 "ActionBody": "3000",
@@ -166,21 +166,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "MPT-3000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "5000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-5000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "10000",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "Text": "MPT-10000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },
 
             ]
@@ -293,7 +293,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Mytel-3000",
                 "Rows": 1,
-                "Columns": 3
+                "Columns": 4
             },{
                 "ActionBody": "5000",
                 "ActionType": "reply",
@@ -315,4 +315,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
     }
+        if(message.text === "MPT-1000"){
+           response.send(new TextMessage('Please type the amount you want!'));
+        }
 });
