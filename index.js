@@ -71,8 +71,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
                 "BgColor": "#000000",
                 "TextOpacity": 60,
-                "Rows": 5,
-                "Columns": 5
+                "Rows": 6,
+                "Columns": 6
             }, {
                 "ActionBody": "MPT",
                 "ActionType": "reply",
@@ -80,7 +80,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "Text": "MPT",
                 "TextOpacity": 60,
                 "Rows": 1,
-                "Columns": 5
+                "Columns": 6
             },
             {
                 "ActionBody": "Ooredoo",
@@ -185,7 +185,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
             ]
         };
-        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new TextMessage(`These are different amount of MPT phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
     }
       
