@@ -228,7 +228,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
             ]
         };
-        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new TextMessage(`These are different amount of Ooredoo phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
     }
        if(message.text === "Telenor"){
@@ -270,7 +270,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
             ]
         };
-        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new TextMessage(`These are different amount of Telenor phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
     }
        if(message.text === "Mytel"){
@@ -312,7 +312,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
             ]
         };
-        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
     }
         if(message.text === "MPT-1000"){
