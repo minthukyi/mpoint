@@ -223,7 +223,91 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "BgColor": "#85bb65",
                 "Text": "Ooredoo-10000",
                 "Rows": 1,
+                "Columns": 4
+            },
+
+            ]
+        };
+        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
+    }
+       if(message.text === "Telenor"){
+        const SAMPLE_RICH_MEDIA = {
+            "ButtonsGroupColumns": 3,
+            "ButtonsGroupRows": 1,
+            "BgColor": "#FFFFFF",
+            "Buttons": [
+            {
+                "ActionBody": "1000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Telenor-1000",
+                "Rows": 1,
                 "Columns": 3
+            },
+            {
+                "ActionBody": "3000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Telenor-3000",
+                "Rows": 1,
+                "Columns": 3
+            },{
+                "ActionBody": "5000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Telenor-5000",
+                "Rows": 1,
+                "Columns": 3
+            },{
+                "ActionBody": "10000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Telenor-10000",
+                "Rows": 1,
+                "Columns": 4
+            },
+
+            ]
+        };
+        response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
+        response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));   
+    }
+       if(message.text === "Mytel"){
+        const SAMPLE_RICH_MEDIA = {
+            "ButtonsGroupColumns": 3,
+            "ButtonsGroupRows": 1,
+            "BgColor": "#FFFFFF",
+            "Buttons": [
+            {
+                "ActionBody": "1000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Mytel-1000",
+                "Rows": 1,
+                "Columns": 3
+            },
+            {
+                "ActionBody": "3000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Mytel-3000",
+                "Rows": 1,
+                "Columns": 3
+            },{
+                "ActionBody": "5000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Mytel-5000",
+                "Rows": 1,
+                "Columns": 3
+            },{
+                "ActionBody": "10000",
+                "ActionType": "reply",
+                "BgColor": "#85bb65",
+                "Text": "Mytel-10000",
+                "Rows": 1,
+                "Columns": 4
             },
 
             ]
