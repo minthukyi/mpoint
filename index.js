@@ -157,7 +157,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
                 "BgMediaType": "picture",
-                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3kFg5hREh-RwYKclgeTJ7c8i3w0l_85tlDbdpYLIZZEXBMFe8"
+                "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3kFg5hREh-RwYKclgeTJ7c8i3w0l_85tlDbdpYLIZZEXBMFe8",
                 "Text": "MPT-1000",
                 "Rows": 1,
                 "Columns": 4
