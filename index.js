@@ -38,6 +38,7 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
 
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
   bot.sendMessage(userProfile.userProfile, new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`,
+  bot.sendMessage(new TextMeaasge('Today rating persentage are as following: If you order below 50000ks you can get 4.2%, between 50000ks and 100000ks you can get 4.4% and above 100000ks you can get 4.6%. Percentage are not stable, they have daily changes!',                                                         
             {
                 "Type": "keyboard",
                 "InputFieldState": "hidden",
@@ -53,7 +54,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                         "Text": "<font color='#ffffff'>Go To Shop</font>"
              }
             ]
-        }, "","","", 7));
+        }, "","","", 7))));
 });
     
   bot.onTextMessage(/./, (message, response) => {
@@ -156,7 +157,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "MPT-1000",
+                "Text": "MPT-1000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -164,21 +165,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "MPT-3000",
+                "Text": "MPT-3000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "MPT-5000",
+                "Text": "MPT-5000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "MPT-10000",
+                "Text": "MPT-10000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -199,7 +200,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Ooredoo-1000",
+                "Text": "Ooredoo-1000ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -207,21 +208,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Ooredoo-3000",
+                "Text": "Ooredoo-3000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Ooredoo-5000",
+                "Text": "Ooredoo-5000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Ooredoo-10000",
+                "Text": "Ooredoo-10000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -241,7 +242,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Telenor-1000",
+                "Text": "Telenor-1000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -249,21 +250,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Telenor-3000",
+                "Text": "Telenor-3000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Telenor-5000",
+                "Text": "Telenor-5000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Telenor-10000",
+                "Text": "Telenor-10000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -283,7 +284,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Mytel-1000",
+                "Text": "Mytel-1000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
@@ -291,21 +292,21 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Mytel-3000",
+                "Text": "Mytel-3000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Mytel-5000",
+                "Text": "Mytel-5000Ks",
                 "Rows": 1,
                 "Columns": 4
             },{
                 "ActionBody": "bills",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
-                "Text": "Mytel-10000",
+                "Text": "Mytel-10000Ks",
                 "Rows": 1,
                 "Columns": 4
             },
