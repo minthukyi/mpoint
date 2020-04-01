@@ -56,7 +56,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         }, "","","", 7)]);
 });
     
-  bot.onTextMessage(/./, (message, response) => {
+ bot.onTextMessage(/./, (message, response) => {
     
    if(message.text === "Hi"){
         const SAMPLE_RICH_MEDIA = {
@@ -145,96 +145,59 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
 }
 
-if(message.text === "Mytel"){
-
-const SAMPLE_RICH_MEDIA = {
-
-"ButtonsGroupColumns": 4,
-
-"ButtonsGroupRows": 1,
-
-"BgColor": "#FFFFFF",
-
-"Buttons": [
+     if(message.text === "Mytel"){
+     const SAMPLE_RICH_MEDIA = {
+     "ButtonsGroupColumns": 4,
+     "ButtonsGroupRows": 1,
+     "BgColor": "#FFFFFF",
+     "Buttons": [
 
 {
 
-"ActionBody": "bills",
-
-"ActionType": "reply",
-
-"BgColor": "#85bb65",
-
-"Text": "Mytel-1000Ks",
-
-"Rows": 1,
-
-"Columns": 4
-
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Mytel-1000Ks",
+     "Rows": 1,
+     "Columns": 4
 },
-
 {
-
 "ActionBody": "bills",
-
 "ActionType": "reply",
-
 "BgColor": "#85bb65",
-
 "Text": "Mytel-3000Ks",
-
 "Rows": 1,
-
 "Columns": 4
-
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Mytel-5000Ks",
+     "Rows": 1,
+     "Columns": 4
 },
 {
 
-"ActionBody": "bills",
-
-"ActionType": "reply",
-
-"BgColor": "#85bb65",
-
-"Text": "Mytel-5000Ks",
-
-"Rows": 1,
-
-"Columns": 4
-
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Mytel-10000Ks",
+     "Rows": 1,
+     "Columns": 4
 },
-{
-
-"ActionBody": "bills",
-
-"ActionType": "reply",
-
-"BgColor": "#85bb65",
-
-"Text": "Mytel-10000Ks",
-
-"Rows": 1,
-
-"Columns": 4
-
-},
-
 ]
-
 };
 
-response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
-
-response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
-
-}
-
-if(message.text === "bills"){
-
-response.send(new TextMessage('Please type the amount you want!'));
+    response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
+    response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
 
 }
 
+ if(message.text === "bills"){
+ response.send(new TextMessage('Please type the amount you want!'));
+
+}
 });
 
     
