@@ -143,5 +143,5 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         };
         response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
-        
+   }
     
