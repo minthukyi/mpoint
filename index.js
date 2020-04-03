@@ -148,6 +148,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
    }
      if(message.text === "Mytel"){
+    // const SAMPLE_KEYBOARD_MESSAGE = {
          {
                 "Type": "keyboard",
                 "InputFieldState": "hidden",
@@ -159,12 +160,12 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                         "Rows": 1,
                         "BgColor": '#009900',
                         "ActionType": "reply",
-                        "ActionBody": "Hi",
+                        "ActionBody": "Mytel",
                         "Text": "<font color='#ffffff'>Mytel-1000</font>"
              }
             ]
-        }, "","","", 7)]);
-});
+         }
+        }
 /*     const SAMPLE_RICH_MEDIA = {
      "ButtonsGroupColumns": 4,
      "ButtonsGroupRows": 1,
