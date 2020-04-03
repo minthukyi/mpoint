@@ -73,7 +73,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "TextOpacity": 60,
                 "Rows": 6,
                 "Columns": 6
-            }, {
+            }, 
+                {
                 "ActionBody": "MPT",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
@@ -91,7 +92,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "TextOpacity": 60,
                 "Rows": 6,
                 "Columns": 6
-            }, {
+            }, 
+            {
                 "ActionBody": "Ooredoo",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
@@ -129,7 +131,8 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                 "TextOpacity": 60,
                 "Rows": 6,
                 "Columns": 6
-            }, {
+            },
+            {
                 "ActionBody": "Mytel",
                 "ActionType": "reply",
                 "BgColor": "#85bb65",
@@ -188,12 +191,10 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
     response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
     response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
-
 }
 
  if(message.text === "bills"){
  response.send(new TextMessage('Please type the amount you want!'));
-
 }
 });
 
