@@ -148,7 +148,24 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
    }
      if(message.text === "Mytel"){
-     const SAMPLE_RICH_MEDIA = {
+         {
+                "Type": "keyboard",
+                "InputFieldState": "hidden",
+                "DefaultHeight": false,
+                "BgColor": '#006600',
+                "Buttons": [
+                    {
+                        "Columns": 6,
+                        "Rows": 1,
+                        "BgColor": '#009900',
+                        "ActionType": "reply",
+                        "ActionBody": "Hi",
+                        "Text": "<font color='#ffffff'>Mytel-1000</font>"
+             }
+            ]
+        }, "","","", 7)]);
+});
+/*     const SAMPLE_RICH_MEDIA = {
      "ButtonsGroupColumns": 4,
      "ButtonsGroupRows": 1,
      "BgColor": "#FFFFFF",
@@ -326,7 +343,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
     response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
     response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
-}
+} */
 
  if(message.text === "bills"){
  response.send(new TextMessage('Please type the amount you want!'));
