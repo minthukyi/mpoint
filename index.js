@@ -146,7 +146,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
         };
         response.send(new TextMessage(`These are different types of phone bills what would you like to order?`));
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
-}
+   }
      if(message.text === "Mytel"){
      const SAMPLE_RICH_MEDIA = {
      "ButtonsGroupColumns": 4,
@@ -183,6 +183,141 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
      "ActionType": "reply",
      "BgColor": "#85bb65",
      "Text": "Mytel-10000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+]
+};
+
+    response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
+    response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
+ }
+     if(message.text === "MPT"){
+     const SAMPLE_RICH_MEDIA = {
+     "ButtonsGroupColumns": 4,
+     "ButtonsGroupRows": 1,
+     "BgColor": "#FFFFFF",
+     "Buttons": [
+
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "MPT-1000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "MPT-3000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "MPT-5000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "MPT-10000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+]
+};
+
+    response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
+    response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
+ }
+     if(message.text === "Telenor"){
+     const SAMPLE_RICH_MEDIA = {
+     "ButtonsGroupColumns": 4,
+     "ButtonsGroupRows": 1,
+     "BgColor": "#FFFFFF",
+     "Buttons": [
+
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Telenor-1000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Telenor-3000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Telenor-5000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Telenor-10000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+]
+};
+
+    response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
+    response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
+}
+ if(message.text === "Ooredoo"){
+     const SAMPLE_RICH_MEDIA = {
+     "ButtonsGroupColumns": 4,
+     "ButtonsGroupRows": 1,
+     "BgColor": "#FFFFFF",
+     "Buttons": [
+
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-1000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-3000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-5000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "bills",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-10000Ks",
      "Rows": 1,
      "Columns": 4
 },
