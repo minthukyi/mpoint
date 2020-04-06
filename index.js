@@ -327,10 +327,46 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
     response.send(new TextMessage(`These are different amount of Mytel phone bills what would you like to order?`));
     response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA)); 
 } 
+});
 
- if(message.text === "bills"){
+if(message.text === "bills"){
  response.send(new TextMessage('Please type the amount you want!'));
 }
-});
+     {
+     "ActionBody": "Ooredoo/1000",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-1000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "Ooredoo/3000",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-3000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "Ooredoo/5000",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-5000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+{
+     "ActionBody": "Ooredoo/10000",
+     "ActionType": "reply",
+     "BgColor": "#85bb65",
+     "Text": "Ooredoo-10000Ks",
+     "Rows": 1,
+     "Columns": 4
+},
+        if(userInput.inculdes('Ooredoo')){
+        userInput=userInput.split('/')
+        var amount = userInput[0]
+    }
 
     
