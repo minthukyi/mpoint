@@ -332,7 +332,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 if(message.text === "bills"){
  response.send(new TextMessage('Please type the amount you want!'));
 }
-     {
+    /* {
      "ActionBody": "Ooredoo/1000",
      "ActionType": "reply",
      "BgColor": "#85bb65",
@@ -367,6 +367,6 @@ if(message.text === "bills"){
         if(userInput.inculdes('Ooredoo')){
         userInput=userInput.split('/')
         var amount = userInput[0]
-    }
+    }*/
 
     
