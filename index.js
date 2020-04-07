@@ -333,7 +333,7 @@ if(message.text === "bills"){
 }
 });
 
-if(message.inculdes ==="Ooredoo"){
+/* if(message.inculdes ==="Ooredoo"){
      {
      "ActionBody": "Ooredoo/1000",
      "ActionType": "reply",
@@ -370,5 +370,5 @@ if(message.inculdes ==="Ooredoo"){
         userInput=userInput.split('/')
         var amount = userInput[0]
     }
-}
+} */
     
