@@ -331,12 +331,13 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 if(message.text === "bills"){
  response.send(new TextMessage('Please type the amount you want!'));
 }
-});
-
- if(message.text.inculdes("Ooredoo")){
+     if(message.text.inculdes("Ooredoo")){
      message = message.split('/')
      var amount = message[1]
      response.send(new TextMessage(`You choose Ooredoo ${amount}`));
  
 }
+});
+
+ 
     
