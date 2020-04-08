@@ -333,7 +333,7 @@ if(message.text === "bills"){
 }
 });
 
- if(message.inculdes("Ooredoo")){
+ if(message.text.inculdes("Ooredoo")){
      message = message.split('/')
      var amount = message[1]
      response.send(new TextMessage(`You choose Ooredoo ${amount}`));
