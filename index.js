@@ -53,7 +53,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
     }, "", "", "", 7)]);
 });
 
-bot.onTextMessage(/./, (message, response) => {
+bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
 
     if (message.text === "Hi") {
         const SAMPLE_RICH_MEDIA = {
