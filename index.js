@@ -327,7 +327,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
     if (message.text === "bills") {
         response.send(new TextMessage('Please type the amount you want!'));
     }
-    if (message.text.inculdes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+    if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         var userInput = message.text.split('/')
         var operator = userInput[0]
         var amount = userInput[1]
