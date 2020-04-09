@@ -331,7 +331,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         var userInput = message.text.split('/')
         var operator = userInput[0]
         var amount = userInput[1]
-        response.send(new TextMessage(`You choose ${operator} ${2} MMK`));
+        response.send(new TextMessage(`You choose ${operator} ${amount} MMK`));
     }
     
 });
