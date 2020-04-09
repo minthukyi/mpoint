@@ -324,13 +324,13 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
     }
 
-    if (message.text === "bills") {
+     if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         response.send(new TextMessage('Please type the amount you want!'));
     }
     if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         var userInput = message.text.split('/')
         var operator = userInput[0]
-        var amount = userInput[2]
+        var amount = userInput[1]
         response.send(new TextMessage(`You choose ${operator} ${amount} MMK`));
 
     }
