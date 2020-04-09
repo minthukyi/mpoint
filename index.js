@@ -336,6 +336,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
     }
      if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         response.send(new TextMessage('Please type the amount you want!'));
+     }
 });
 
  
