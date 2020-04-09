@@ -324,8 +324,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
     }
 
-    /* if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
-        response.send(new TextMessage('Please type the amount you want!'));*/
+    if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+        response.send(new TextMessage('Please type the amount you want!'));
     }
     if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         var userInput = message.text.split('/')
@@ -334,9 +334,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         response.send(new TextMessage(`You choose ${operator} ${amount} MMK`));
 
     }
-     if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+    /*if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         response.send(new TextMessage('Please type the amount you want!'));
-     }
+     } */
 });
 
  
