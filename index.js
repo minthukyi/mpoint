@@ -331,9 +331,11 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         var userInput = message.text.split('/')
         var operator = userInput[0]
         var amount = userInput[1]
-        response.send(new TextMessage(`You choose ${operator} ${amount} MMK`));
+        response.send(new TextMessage(`Please text how much you want to buy`),['quantity']);
     }
-    
+    if (message.trackingData[0].includes('quantity')){
+        response.send()   
+    }    
 });
 
  
