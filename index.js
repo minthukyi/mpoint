@@ -54,7 +54,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 });
 
 bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
-
+    if(message.text){
     if (message.text === "Hi") {
         const SAMPLE_RICH_MEDIA = {
             "ButtonsGroupColumns": 6,
@@ -333,7 +333,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         var amount = userInput[1]
         response.send(new TextMessage(`Please text how much you want to buy`),[`quantity/${operator}/${amount}`]);
     }
-    if(message.trackingData){
+        if(message.trackingData){
         if (message.trackingData[0].includes('quantity')){
             var userValue = message.trackingData[0];
             userValue = userValue.split('/')
@@ -356,6 +356,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
             response.send(new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
         } 
     }
+    }
+    
 });
 
  
