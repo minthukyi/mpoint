@@ -324,10 +324,26 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
         response.send(new RichMediaMessage(SAMPLE_RICH_MEDIA));
     }
 
-    if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
-        response.send(new TextMessage('Please type the amount you want!'));
-    }
+    //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+        //response.send(new TextMessage('Please type the amount you want!'));
         
+        bot.sendMessage(userProfile,new TextMessage('Please type the amount you want'),[["Ooredoo Amount",`${userinput}`]])
+    }else if(!isNaN(userInpu)){
+        if(trackingData[0] == "Ooredoo Amount"){
+            var text = trackingData[1]
+            text = text.split('/')
+           var bid = text[0]
+           var price = text[1]
+           var name = text[2]
+           console.log(price)
+            price = parseInt(price)
+            console.log(price)
+            price = parseInt(userInput)*price
+            console.log(price)
+            bot.sendMessage(userProfile, new TextMessage(`${name}${userInput} price is ${price}`{
+            
+    
+
 });
 
  
