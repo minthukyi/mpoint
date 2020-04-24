@@ -326,9 +326,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
 
     //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         //response.send(new TextMessage('Please type the amount you want!'));
-        
+        else if(userInput == "MPT/" || userInput == 'Telenor/' || userInput == 'Ooredoo/' || userInput == 'Mytel/'){
         bot.sendMessage(userProfile,new TextMessage('Please type the amount you want'),[["Ooredoo Amount",`${userinput}`]])
-    }else if(!isNaN(userInpu)){
+    }else if(!isNaN(userInput)){
         if(trackingData[0] == "Ooredoo Amount"){
             var text = trackingData[1]
             text = text.split('/')
@@ -340,7 +340,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
             console.log(price)
             price = parseInt(userInput)*price
             console.log(price)
-            bot.sendMessage(userProfile, new TextMessage(`${name}${userInput} price is ${price}`{
+            bot.sendMessage(userProfile, new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?,`{
             
     
 
