@@ -326,13 +326,14 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
 
     //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         //response.send(new TextMessage('Please type the amount you want!'));
+        
         else if(userInput == "MPT/" || userInput == 'Telenor/' || userInput == 'Ooredoo/' || userInput == 'Mytel/'){
         bot.sendMessage(userProfile,new TextMessage('Please type the amount you want'),[["Ooredoo Amount",`${userinput}`]])
     }else if(!isNaN(userInput)){
         if(trackingData[0] == "Ooredoo Amount"){
             var text = trackingData[1]
             text = text.split('/')
-           var bid = text[0]
+           var amount = userInput
            var price = text[1]
            var name = text[2]
            console.log(price)
@@ -340,9 +341,36 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
             console.log(price)
             price = parseInt(userInput)*price
             console.log(price)
-            bot.sendMessage(userProfile, new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?,`{
             
-    
+            bot.sendMessage(userProfile.userProfile,[new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?`),
+                                         new KeyboardMessage({
+                
+                                "Type": "keyboard",
+                                "InputFieldState": "hidden",
+               "Revision":1,
+               "Buttons": [
+                   {
+                       "Columns": 6,
+                       "Rows": 1,
+                       "BgColor": "#99FFFF",
+                       "ActionType": "reply",
+                       "ActionBody": "BB",
+                       "Text": "<font color='#000000'>Caculate</font>"
+                   },{
+                       "Columns": 6,
+                       "Rows": 1,
+                       "BgColor": "#99FFFF",
+                       "ActionType": "reply",
+                       "ActionBody": "Home",
+                       "Text": "<font color='#000000'>Back</font>"
+                 }
+               ]
+                     }, "", "", "",7)]);                                  
+           }
+            if(userInput == 'BB'){
+                
+        
+            
 
 });
 
