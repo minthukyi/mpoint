@@ -277,6 +277,37 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
     }
         if(userInput.includes('Calculate/')){
             //retail Price here
+        if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+        var userInput = message.text.split('/')
+        var operator = userInput[0]
+        var amount = userInput[1]
+        response.send(new TextMessage(`Please text how much you want to buy`),[`quantity/${operator}/${amount}`]);
+    }
+        if(message.trackingData){
+        if (message.trackingData[0].includes('quantity')){
+            var userValue = message.trackingData[0];
+            userValue = userValue.split('/')
+            var operator = userInput[1]
+            var amount = userInput[2]
+            if(parseInt(amount) < 50000){
+                var percentage = 4.2
+            }
+            if(parseInt(amount) > 50000 && parseInt(amount) < 100000){
+                var percentage = 4.4
+            }
+            if(parseInt(amount) > 100000){
+                var percentage = 4.6
+            }
+            var amount = parseInt(amount);
+            var discountValue = amount * percentage / 100
+            var userAmount = `${amount - discountValue}`;
+            var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
+            userAmount = parseInt(userAmount) - parseInt(remainder);
+            response.send(new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
+        } 
+    }
+    }
+
             userInput = userInput.split('/')
             var price = parseInt(userInput[1]);
             var amount = parseInt(userInput [2]);
