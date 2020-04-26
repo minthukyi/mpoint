@@ -275,8 +275,11 @@ bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
 
         bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
     }
-        if(userInput.includes('Calculate')){
+        if(userInput.includes('Calculate/')){
             //retail Price here
+            userInput = userInput.split('/')
+            var price = parseInt(userInput[1]);
+            var amount = parseInt(userInput [2]);
         }
     if (message.text === "Ooredoo") {
         const SAMPLE_RICH_MEDIA = {
