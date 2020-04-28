@@ -279,8 +279,8 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             //retail Price here
             if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
                 var userInput = message.text.split('/')
-                var operator = userInput[0]
-                var amount = userInput[1]
+                var operator = userInput[4]
+                var amount = userInput[2]
                 if (parseInt(amount) < 50000) {
                     var percentage = 4.2
                 }
@@ -357,7 +357,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     text = text.split('/')
                     var amount = userInput
                     var price = text[1]
-                    var name = text[2]
+                    var name = text[0]
                     console.log(price)
                     price = parseInt(price)
                     console.log(price)
@@ -375,7 +375,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": `Calculate/${price}/${userInput}`,
+                                "ActionBody": `Calculate/${price}/${userInput}/${name}`,
                                 "Text": "<font color='#000000'>Caculate</font>"
                             }, {
                                 "Columns": 6,
