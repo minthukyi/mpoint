@@ -377,7 +377,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
                                 "ActionBody": `Calculate/${price}/${userInput}/${name}`,
-                                "Text": "<font color='#000000'>Caculate</font>"
+                                "Text": "<font color='#000000'>Calculate</font>"
                             }, {
                                 "Columns": 6,
                                 "Rows": 1,
