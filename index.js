@@ -53,343 +53,342 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
     }, "", "", "", 7)]);
 });
 
-bot.on(BotEvents.MESSAGE_RECEIVED,(message,response)=> {
-    if(message.text){
+bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
+    if (message.text) {
         var userInput = message.text;
-    if (message.text === "Hi") {
-        const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 6,
-            "ButtonsGroupRows": 7,
-            "BgColor": "#FFFFFF",
-            "Buttons": [{
-                    "ActionBody": "MPT",
-                    "ActionType": "reply",
-                    "BgMediaType": "picture",
-                    "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
-                    "BgColor": "#000000",
-                    "TextOpacity": 60,
-                    "Rows": 6,
-                    "Columns": 6
-                },
-                {
-                    "ActionBody": "MPT",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "MPT",
-                    "TextOpacity": 60,
-                    "Rows": 1,
-                    "Columns": 6
-                },
-                {
-                    "ActionBody": "Ooredoo",
-                    "ActionType": "reply",
-                    "BgMediaType": "picture",
-                    "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
-                    "BgColor": "#000000",
-                    "TextOpacity": 60,
-                    "Rows": 6,
-                    "Columns": 6
-                },
-                {
-                    "ActionBody": "Ooredoo",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Ooredoo",
-                    "TextOpacity": 60,
-                    "Rows": 1,
-                    "Columns": 6
-                },
+        if (message.text === "Hi") {
+            const SAMPLE_RICH_MEDIA = {
+                "ButtonsGroupColumns": 6,
+                "ButtonsGroupRows": 7,
+                "BgColor": "#FFFFFF",
+                "Buttons": [{
+                        "ActionBody": "MPT",
+                        "ActionType": "reply",
+                        "BgMediaType": "picture",
+                        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiaiT2jEjKsHBKugBZDmidM-_D4R5lZ5ZOfYsWyGhsng9_USRo",
+                        "BgColor": "#000000",
+                        "TextOpacity": 60,
+                        "Rows": 6,
+                        "Columns": 6
+                    },
+                    {
+                        "ActionBody": "MPT",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "MPT",
+                        "TextOpacity": 60,
+                        "Rows": 1,
+                        "Columns": 6
+                    },
+                    {
+                        "ActionBody": "Ooredoo",
+                        "ActionType": "reply",
+                        "BgMediaType": "picture",
+                        "Image": "https://www.thefastmode.com/media/k2/items/src/0f141567eda6067eb710764f558d3d2b.jpg",
+                        "BgColor": "#000000",
+                        "TextOpacity": 60,
+                        "Rows": 6,
+                        "Columns": 6
+                    },
+                    {
+                        "ActionBody": "Ooredoo",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Ooredoo",
+                        "TextOpacity": 60,
+                        "Rows": 1,
+                        "Columns": 6
+                    },
 
-                {
-                    "ActionBody": "Telenor",
-                    "ActionType": "reply",
-                    "BgMediaType": "picture",
-                    "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
-                    "BgColor": "#000000",
-                    "TextOpacity": 60,
-                    "Rows": 6,
-                    "Columns": 6
-                }, {
-                    "ActionBody": "Telenor",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Telenor",
-                    "TextOpacity": 60,
-                    "Rows": 1,
-                    "Columns": 6
-                },
+                    {
+                        "ActionBody": "Telenor",
+                        "ActionType": "reply",
+                        "BgMediaType": "picture",
+                        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSOqOLFi-WL_D5FJHbx04Ian-fBqCm8R772dszQ6se6vaRXLd_K",
+                        "BgColor": "#000000",
+                        "TextOpacity": 60,
+                        "Rows": 6,
+                        "Columns": 6
+                    }, {
+                        "ActionBody": "Telenor",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Telenor",
+                        "TextOpacity": 60,
+                        "Rows": 1,
+                        "Columns": 6
+                    },
 
-                {
-                    "ActionBody": "Mytel",
-                    "ActionType": "reply",
-                    "BgMediaType": "picture",
-                    "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
-                    "BgColor": "#000000",
-                    "TextOpacity": 60,
-                    "Rows": 6,
-                    "Columns": 6
-                },
-                {
-                    "ActionBody": "Mytel",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Mytel",
-                    "TextOpacity": 60,
-                    "Rows": 1,
-                    "Columns": 6
-                },
+                    {
+                        "ActionBody": "Mytel",
+                        "ActionType": "reply",
+                        "BgMediaType": "picture",
+                        "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTX5spsmlkLEqviS6A6JaKHQoj0g_TeCbaP-Avk_oNA3H8qlihA",
+                        "BgColor": "#000000",
+                        "TextOpacity": 60,
+                        "Rows": 6,
+                        "Columns": 6
+                    },
+                    {
+                        "ActionBody": "Mytel",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Mytel",
+                        "TextOpacity": 60,
+                        "Rows": 1,
+                        "Columns": 6
+                    },
 
-            ]
-        };
-        bot.sendMessage(response.userProfile, [new TextMessage('Which type of phone topup do you wish to purchase?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
-    }
-    if (message.text === "Mytel") {
-        const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 4,
-            "ButtonsGroupRows": 1,
-            "BgColor": "#FFFFFF",
-            "Buttons": [
+                ]
+            };
+            bot.sendMessage(response.userProfile, [new TextMessage('Which type of phone topup do you wish to purchase?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+        }
+        if (message.text === "Mytel") {
+            const SAMPLE_RICH_MEDIA = {
+                "ButtonsGroupColumns": 4,
+                "ButtonsGroupRows": 1,
+                "BgColor": "#FFFFFF",
+                "Buttons": [
 
-                {
-                    "ActionBody": "Mytel/1000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Mytel-1000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Mytel/3000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Mytel-3000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Mytel/5000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Mytel-5000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Mytel/10000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Mytel-10000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-            ]
-        };
+                    {
+                        "ActionBody": "Mytel/1000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Mytel-1000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Mytel/3000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Mytel-3000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Mytel/5000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Mytel-5000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Mytel/10000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Mytel-10000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                ]
+            };
 
-        bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
-    }
-    if (message.text === "MPT") {
-        const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 4,
-            "ButtonsGroupRows": 1,
-            "BgColor": "#FFFFFF",
-            "Buttons": [
+            bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+        }
+        if (message.text === "MPT") {
+            const SAMPLE_RICH_MEDIA = {
+                "ButtonsGroupColumns": 4,
+                "ButtonsGroupRows": 1,
+                "BgColor": "#FFFFFF",
+                "Buttons": [
 
-                {
-                    "ActionBody": "MPT/1000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "MPT-1000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "MPT/3000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "MPT-3000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "MPT/5000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "MPT-5000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "MPT/10000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "MPT-10000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-            ]
-        };
+                    {
+                        "ActionBody": "MPT/1000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "MPT-1000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "MPT/3000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "MPT-3000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "MPT/5000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "MPT-5000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "MPT/10000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "MPT-10000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                ]
+            };
 
-        bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
-    }
-    if (message.text === "Telenor") {
-        const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 4,
-            "ButtonsGroupRows": 1,
-            "BgColor": "#FFFFFF",
-            "Buttons": [
+            bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+        }
+        if (message.text === "Telenor") {
+            const SAMPLE_RICH_MEDIA = {
+                "ButtonsGroupColumns": 4,
+                "ButtonsGroupRows": 1,
+                "BgColor": "#FFFFFF",
+                "Buttons": [
 
-                {
-                    "ActionBody": "Telenor/1000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Telenor-1000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Telenor/3000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Telenor-3000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Telenor/5000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Telenor-5000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Telenor/10000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Telenor-10000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-            ]
-        };
+                    {
+                        "ActionBody": "Telenor/1000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Telenor-1000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Telenor/3000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Telenor-3000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Telenor/5000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Telenor-5000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Telenor/10000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Telenor-10000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                ]
+            };
 
-        bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
-    }
-        if(userInput.includes('Calculate/')){
+            bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+        }
+        if (userInput.includes('Calculate/')) {
             //retail Price here
-        if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
-        var userInput = message.text.split('/')
-        var operator = userInput[0]
-        var amount = userInput[1]
-        if(parseInt(amount) < 50000){
-                var percentage = 4.2
+            if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+                var userInput = message.text.split('/')
+                var operator = userInput[0]
+                var amount = userInput[1]
+                if (parseInt(amount) < 50000) {
+                    var percentage = 4.2
+                }
+                if (parseInt(amount) > 50000 && parseInt(amount) < 100000) {
+                    var percentage = 4.4
+                }
+                if (parseInt(amount) > 100000) {
+                    var percentage = 4.6
+                }
+                var amount = parseInt(amount);
+                var discountValue = amount * percentage / 100
+                var userAmount = `${amount - discountValue}`;
+                var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
+                userAmount = parseInt(userAmount) - parseInt(remainder);
+                response.send(new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
             }
-            if(parseInt(amount) > 50000 && parseInt(amount) < 100000){
-                var percentage = 4.4
-            }
-            if(parseInt(amount) > 100000){
-                var percentage = 4.6
-            }
-            var amount = parseInt(amount);
-            var discountValue = amount * percentage / 100
-            var userAmount = `${amount - discountValue}`;
-            var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
-            userAmount = parseInt(userAmount) - parseInt(remainder);
-            response.send(new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
-    }
-    if (message.text === "Ooredoo") {
-        const SAMPLE_RICH_MEDIA = {
-            "ButtonsGroupColumns": 4,
-            "ButtonsGroupRows": 1,
-            "BgColor": "#FFFFFF",
-            "Buttons": [
+        }
+        if (message.text === "Ooredoo") {
+            const SAMPLE_RICH_MEDIA = {
+                "ButtonsGroupColumns": 4,
+                "ButtonsGroupRows": 1,
+                "BgColor": "#FFFFFF",
+                "Buttons": [
 
-                {
-                    "ActionBody": "Ooredoo/1000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Ooredoo-1000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Ooredoo/3000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Ooredoo-3000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Ooredoo/5000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Ooredoo-5000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-                {
-                    "ActionBody": "Ooredoo/10000",
-                    "ActionType": "reply",
-                    "BgColor": "#85bb65",
-                    "Text": "Ooredoo-10000Ks",
-                    "Rows": 1,
-                    "Columns": 4
-                },
-            ]
-        };
+                    {
+                        "ActionBody": "Ooredoo/1000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Ooredoo-1000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Ooredoo/3000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Ooredoo-3000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Ooredoo/5000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Ooredoo-5000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                    {
+                        "ActionBody": "Ooredoo/10000",
+                        "ActionType": "reply",
+                        "BgColor": "#85bb65",
+                        "Text": "Ooredoo-10000Ks",
+                        "Rows": 1,
+                        "Columns": 4
+                    },
+                ]
+            };
 
-        bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
-    }
+            bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+        }
 
-    //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+        //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         //response.send(new TextMessage('Please type the amount you want!'));
-        
-        else if(userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')){
-        bot.sendMessage(userProfile,new TextMessage('Please type the amount you want'),[[`${userInput}`]])
-    }else if(!isNaN(userInput)){
-        if(message.text){
-            var trackingData = message.trackingData[0]
-        if(trackingData[0].includes('MPT/') || trackingData[0].includes('Telenor/') || trackingData[0].includes('Ooredoo/') || trackingData[0].includes('MyTel/')){
-            var text = trackingData[0]
-            text = text.split('/')
-           var amount = userInput
-           var price = text[1]
-           var name = text[2]
-           console.log(price)
-            price = parseInt(price)
-            console.log(price)
-            price = parseInt(userInput)*price
-            console.log(price)
-            
-            bot.sendMessage(userProfile.userProfile,[new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?`),
-                                         new KeyboardMessage({
-                
-                                "Type": "keyboard",
-                                "InputFieldState": "hidden",
-               "Revision":1,
-               "Buttons": [
-                   {
-                       "Columns": 6,
-                       "Rows": 1,
-                       "BgColor": "#99FFFF",
-                       "ActionType": "reply",
-                       "ActionBody": `Calculate/${price}/${userInput}`,
-                       "Text": "<font color='#000000'>Caculate</font>"
-                   },{
-                       "Columns": 6,
-                       "Rows": 1,
-                       "BgColor": "#99FFFF",
-                       "ActionType": "reply",
-                       "ActionBody": "Home",
-                       "Text": "<font color='#000000'>Back</font>"
-                 }
-               ]
-                     }, "", "", "",7)]);                                  
-           }
-        
-                                    
-});
+        else if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
+            bot.sendMessage(userProfile, new TextMessage('Please type the amount you want'), [
+                [`${userInput}`]
+            ])
+        } else if (!isNaN(userInput)) {
+            if (message.text) {
+                var trackingData = message.trackingData[0]
+                if (trackingData[0].includes('MPT/') || trackingData[0].includes('Telenor/') || trackingData[0].includes('Ooredoo/') || trackingData[0].includes('MyTel/')) {
+                    var text = trackingData[0]
+                    text = text.split('/')
+                    var amount = userInput
+                    var price = text[1]
+                    var name = text[2]
+                    console.log(price)
+                    price = parseInt(price)
+                    console.log(price)
+                    price = parseInt(userInput) * price
+                    console.log(price)
 
- 
-    
+                    bot.sendMessage(userProfile.userProfile, [new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?`),
+                        new KeyboardMessage({
+
+                            "Type": "keyboard",
+                            "InputFieldState": "hidden",
+                            "Revision": 1,
+                            "Buttons": [{
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "reply",
+                                "ActionBody": `Calculate/${price}/${userInput}`,
+                                "Text": "<font color='#000000'>Caculate</font>"
+                            }, {
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "reply",
+                                "ActionBody": "Home",
+                                "Text": "<font color='#000000'>Back</font>"
+                            }]
+                        }, "", "", "", 7)
+                    ]);
+                }
+            }
+        }
+    }
+});
