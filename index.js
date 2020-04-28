@@ -276,11 +276,12 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
         }
         if (userInput.includes('Calculate/')) {
+            console.log('in calculate');
             //retail Price here
             if (userInput("/Ooredoo") || userInput('/Telenor') || userInput('/MPT') || userInput('/Mytel')) {
                 var userInput = message.text.split('/')
-                var operator = userInput[4]
-                var amount = userInput[2]
+                var operator = userInput[3]
+                var amount = userInput[1]
                 if (parseInt(amount) < 50000) {
                     var percentage = 4.2
                 }
@@ -295,7 +296,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 var userAmount = `${amount - discountValue}`;
                 var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
                 userAmount = parseInt(userAmount) - parseInt(remainder);
-                response.send(new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
+                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
             }
         }
         if (message.text === "Ooredoo") {
