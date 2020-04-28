@@ -277,7 +277,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         }
         if (userInput.includes('Calculate/')) {
             //retail Price here
-            if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
+            if (userInput("/Ooredoo") || userInput('/Telenor') || userInput('/MPT') || userInput('/Mytel')) {
                 var userInput = message.text.split('/')
                 var operator = userInput[4]
                 var amount = userInput[2]
@@ -364,7 +364,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     price = parseInt(userInput) * price
                     console.log(price)
 
-                    bot.sendMessage(response.userProfile, [new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?`),
+                    bot.sendMessage(response.userProfile, [new TextMessage(`${name} ${userInput} price is ${price},You want to calculate this price into retail price?`),
                         new KeyboardMessage({
 
                             "Type": "keyboard",
