@@ -8,7 +8,7 @@ const toYAML = require('winston-console-formatter');
 var request = require('request');
 
 // Creating the bot with access token, name and avatar
-const bot = new ViberBot(logger, {
+const bot = new ViberBot({
     authToken: "4b108d593627d1be-572b518d955f6fd1-d720dc880bcc9bc", // <--- Paste your token here
     name: "M-Points", // <--- Your bot name here
     avatar: "http://api.adorable.io/avatar/200/isitup" // It is recommended to be 720x720, and no more than 100kb.
@@ -308,7 +308,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         if (userInput.includes('Calculate/')) {
             console.log('in calculate');
             //retail Price here
-            if (userInput("/Ooredoo") || userInput('/Telenor') || userInput('/MPT') || userInput('/Mytel')) {
+            if (userInput.includes("/Ooredoo") || userInput.includes('/Telenor') || userInput.includes('/MPT') || userInput.includes('/Mytel')) {
                 var userInput = message.text.split('/')
                 var operator = userInput[3]
                 var amount = userInput[1]
