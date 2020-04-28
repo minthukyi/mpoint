@@ -7,19 +7,6 @@ const winston = require('winston');
 const toYAML = require('winston-console-formatter');
 var request = require('request');
 
-function createLogger() {
-    const logger = new winston.createLogger({
-        level: "debug" // We recommend using the debug level for development
-    });
-
-    logger.add(new winston.transports.Console({
-        format: winston.format.simple()
-    }));
-    return logger;
-}
-
-const logger = createLogger();
-
 // Creating the bot with access token, name and avatar
 const bot = new ViberBot(logger, {
     authToken: "4b108d593627d1be-572b518d955f6fd1-d720dc880bcc9bc", // <--- Paste your token here
@@ -32,8 +19,6 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
     const port = process.env.PORT || 8080;
 
     http.createServer(bot.middleware()).listen(port, () => bot.setWebhook(process.env.NOW_URL || process.env.HEROKU_URL));
-} else {
-    logger.debug('Could not find the now.sh/Heroku environment variables. Please make sure you followed readme guide.');
 }
 
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
@@ -54,6 +39,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 });
 
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
+    console.log(message);
     if (message.text) {
         var userInput = message.text;
         if (message.text === "Hi") {
@@ -275,30 +261,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
             bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
         }
-        if (userInput.includes('Calculate/')) {
-            console.log('in calculate');
-            //retail Price here
-            if (userInput("/Ooredoo") || userInput('/Telenor') || userInput('/MPT') || userInput('/Mytel')) {
-                var userInput = message.text.split('/')
-                var operator = userInput[3]
-                var amount = userInput[1]
-                if (parseInt(amount) < 50000) {
-                    var percentage = 4.2
-                }
-                if (parseInt(amount) > 50000 && parseInt(amount) < 100000) {
-                    var percentage = 4.4
-                }
-                if (parseInt(amount) > 100000) {
-                    var percentage = 4.6
-                }
-                var amount = parseInt(amount);
-                var discountValue = amount * percentage / 100
-                var userAmount = `${amount - discountValue}`;
-                var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
-                userAmount = parseInt(userAmount) - parseInt(remainder);
-                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
-            }
-        }
         if (message.text === "Ooredoo") {
             const SAMPLE_RICH_MEDIA = {
                 "ButtonsGroupColumns": 4,
@@ -343,14 +305,38 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
             bot.sendMessage(response.userProfile, [new TextMessage('Please choose denomination?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
         }
-
+        if (userInput.includes('Calculate/')) {
+            console.log('in calculate');
+            //retail Price here
+            if (userInput("/Ooredoo") || userInput('/Telenor') || userInput('/MPT') || userInput('/Mytel')) {
+                var userInput = message.text.split('/')
+                var operator = userInput[3]
+                var amount = userInput[1]
+                if (parseInt(amount) < 50000) {
+                    var percentage = 4.2
+                }
+                if (parseInt(amount) > 50000 && parseInt(amount) < 100000) {
+                    var percentage = 4.4
+                }
+                if (parseInt(amount) > 100000) {
+                    var percentage = 4.6
+                }
+                var amount = parseInt(amount);
+                var discountValue = amount * percentage / 100
+                var userAmount = `${amount - discountValue}`;
+                var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
+                userAmount = parseInt(userAmount) - parseInt(remainder);
+                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
+            }
+        }
         //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         //response.send(new TextMessage('Please type the amount you want!'));
-        else if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
+        if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
             bot.sendMessage(response.userProfile, new TextMessage('Please type the amount you want'), [
                 [`${userInput}`]
             ])
-        } else if (!isNaN(userInput)) {
+        }
+        if (!isNaN(userInput)) {
             if (message.text) {
                 var trackingData = message.trackingData[0]
                 if (trackingData[0].includes('MPT/') || trackingData[0].includes('Telenor/') || trackingData[0].includes('Ooredoo/') || trackingData[0].includes('MyTel/')) {
