@@ -346,7 +346,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         //response.send(new TextMessage('Please type the amount you want!'));
         else if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
-            bot.sendMessage(userProfile, new TextMessage('Please type the amount you want'), [
+            bot.sendMessage(response.userProfile, new TextMessage('Please type the amount you want'), [
                 [`${userInput}`]
             ])
         } else if (!isNaN(userInput)) {
