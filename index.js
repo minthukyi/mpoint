@@ -364,7 +364,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     price = parseInt(userInput) * price
                     console.log(price)
 
-                    bot.sendMessage(userProfile.userProfile, [new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?`),
+                    bot.sendMessage(response.userProfile, [new TextMessage(`${name}${userInput} price is ${price},You want to calculate this price into retail price?`),
                         new KeyboardMessage({
 
                             "Type": "keyboard",
