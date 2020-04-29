@@ -345,7 +345,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": "Home",
+                                "ActionBody": `${userProfile.name}`,
                                 "Text": "<font color='#000000'>Back</font>"
                             }]
                         }, "", "", "", 7)]);
@@ -392,7 +392,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": "${userProfile.name}",
+                                "ActionBody": `${userProfile.name}`,
                                 "Text": "<font color='#000000'>Back</font>"
                             }]
                         }, "", "", "", 7)
