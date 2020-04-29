@@ -327,7 +327,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
                 userAmount = parseInt(userAmount) - parseInt(remainder);
                 bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder}kyats will save as points!`))
-                bot.sendMessage(response.userProfile, new TextMessage(`Do you want to order?`),
+                bot.sendMessage(response.userProfile, [new TextMessage(`Do you want to order?`),
                                 new KeyboardMessage({
                     
                             "Type": "keyboard",
@@ -338,17 +338,17 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "share-phone",
-                                "ActionBody": `Calculate/${price}/${userInput}/${name}`,
-                                "Text": "<font color='#000000'>Calculate</font>"
+                                "ActionBody": `buy`,
+                                "Text": "<font color='#000000'>Yes</font>"
                             }, {
                                 "Columns": 6,
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": `${userProfile.name}`,
-                                "Text": "<font color='#000000'>Back</font>"
+                                "ActionBody": `Hi`,
+                                "Text": "<font color='#000000'>No</font>"
                             }]
-                        }, "", "", "", 7)]);
+                        }, "", "", "", 7)], ['userInput']);
             
             }
         }
