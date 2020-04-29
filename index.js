@@ -127,7 +127,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
                 ]
             };
-            bot.sendMessage(response.userProfile, [new TextMessage('Which type of phone topup do you wish to purchase?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+            bot.sendMessage(response.userProfile, [new TextMessage('Which type of phone top-up do you want to purchase?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
         }
         if (message.text === "Mytel") {
             const SAMPLE_RICH_MEDIA = {
@@ -326,13 +326,36 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 var userAmount = `${amount - discountValue}`;
                 var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
                 userAmount = parseInt(userAmount) - parseInt(remainder);
-                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount}kyats, you save ${remainder} kyats!This ${remainder}kyats will save as a points`))
+                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder}kyats will save as points!`))
+                bot.sendMessage(response.userProfile, new TextMessage(`Do you want to order?`),
+                                new KeyboardMessage({
+                    
+                            "Type": "keyboard",
+                            "InputFieldState": "hidden",
+                            "Revision": 1,
+                            "Buttons": [{
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "share-phone",
+                                "ActionBody": `Calculate/${price}/${userInput}/${name}`,
+                                "Text": "<font color='#000000'>Calculate</font>"
+                            }, {
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "reply",
+                                "ActionBody": "Home",
+                                "Text": "<font color='#000000'>Back</font>"
+                            }]
+                        }, "", "", "", 7)]);
+            
             }
         }
         //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
         //response.send(new TextMessage('Please type the amount you want!'));
         if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
-            bot.sendMessage(response.userProfile, new TextMessage('Please type the amount you want'), [
+            bot.sendMessage(response.userProfile, new TextMessage('Please type the amount you want!'), [
                 [`${userInput}`]
             ])
         }
@@ -351,7 +374,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     price = parseInt(userInput) * price
                     console.log(price)
 
-                    bot.sendMessage(response.userProfile, [new TextMessage(`${name} ${userInput} price is ${price},You want to calculate this price into retail price?`),
+                    bot.sendMessage(response.userProfile, [new TextMessage(`${name} ${userInput} unit price is ${price},You want to calculate this price into retail price?`),
                         new KeyboardMessage({
 
                             "Type": "keyboard",
@@ -369,7 +392,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": "Home",
+                                "ActionBody": "${userProfile.name}",
                                 "Text": "<font color='#000000'>Back</font>"
                             }]
                         }, "", "", "", 7)
