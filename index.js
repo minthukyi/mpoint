@@ -326,7 +326,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 var userAmount = `${amount - discountValue}`;
                 var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
                 userAmount = parseInt(userAmount) - parseInt(remainder);
-                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} you save ${remainder} points`))
+                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount}kyats, you save ${remainder} kyats!This ${remainder}kyats will save as a points`))
             }
         }
         //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
