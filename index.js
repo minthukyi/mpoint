@@ -307,7 +307,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         }
         if (userInput.includes('Calculate/')) {
             console.log('in calculate');
-            //retail Price here
+          
             if (userInput.includes("/Ooredoo") || userInput.includes('/Telenor') || userInput.includes('/MPT') || userInput.includes('/Mytel')) {
                 var userInput = message.text.split('/')
                 var operator = userInput[3]
@@ -352,8 +352,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             
             }
         }
-        //if (message.text.includes("Ooredoo/") || message.text.includes('Telenor/') || message.text.includes('MPT/') || message.text.includes('Mytel/')) {
-        //response.send(new TextMessage('Please type the amount you want!'));
+       
         if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
             bot.sendMessage(response.userProfile, new TextMessage('Please type the amount you want!'), [
                 [`${userInput}`]
@@ -375,7 +374,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     price = parseInt(userInput) * price
                     console.log(price)
 
-                    bot.sendMessage(response.userProfile, [new TextMessage(`${name} ${userInput} unit price is ${price},You want to calculate this price into retail price?`),
+                    bot.sendMessage(response.userProfile, [new TextMessage(`${denomination} ${userInput} unit price is ${price},you want to calculate this price into retail price?`),
                         new KeyboardMessage({
 
                             "Type": "keyboard",
