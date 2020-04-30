@@ -367,6 +367,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     text = text.split('/')
                     var amount = userInput
                     var price = text[1]
+                    var denomination = price;
                     var name = text[0]
                     console.log(price)
                     price = parseInt(price)
@@ -392,7 +393,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": `${userProfile.name}`,
+                                "ActionBody": `${name}/${price}`,
                                 "Text": "<font color='#000000'>Back</font>"
                             }]
                         }, "", "", "", 7)
