@@ -6,6 +6,9 @@ const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const winston = require('winston');
 const toYAML = require('winston-console-formatter');
 var request = require('request');
+var serviceAccount = process.env.serviceAccount;
+serviceAccount = JSON.parse(serviceAccount);
+var admin = require('firebase-admin');
 
 // Creating the bot with access token, name and avatar
 const bot = new ViberBot({
