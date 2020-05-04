@@ -51,6 +51,33 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
 
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     console.log(message);
+    if (message.contactPhoneNumber){
+        var trackingData = message.trackingData[0];
+        bot.sendMessage(response.userProfile, new KeyboardMessage({
+                    
+                            "Type": "keyboard",
+                            "InputFieldState": "hidden",
+                            "Revision": 1,
+                            "Buttons": [{
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "location-picker",
+                                "ActionBody": `buy`,
+                                "Text": "<font color='#000000'>Yes</font>"
+                            }]},"","","",7), [[trackingData,message.contactPhoneNumber]]);
+    }
+    if (message.latitude){
+        var trackingData = message.trackingData[0];
+        var phone = trackingData[1];
+        var id = trackingData[0];
+        db.collection('orderList').doc('id').set({
+            phone: phone,
+            location: {lat: message.latitude, long: message.longitude}
+        }, {merge: true}).then(success=>{
+            bot.sendMessage(response.userProfile, new TextMessage('Purchase success! This is your order id: '+id));
+        })
+    }
     if (message.text) {
         var userInput = message.text;
         if (message.text === "Hi") {
@@ -322,23 +349,41 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             if (userInput.includes("/Ooredoo") || userInput.includes('/Telenor') || userInput.includes('/MPT') || userInput.includes('/Mytel')) {
                 var userInput = message.text.split('/')
                 var operator = userInput[3]
+                var quantity = userInput[2]
                 var amount = userInput[1]
                 if (parseInt(amount) < 50000) {
                     var percentage = 4.2
                 }
-                if (parseInt(amount) > 50000 && parseInt(amount) < 100000) {
+                if (parseInt(amount) >= 50000 && parseInt(amount) <= 100000) {
                     var percentage = 4.4
                 }
                 if (parseInt(amount) > 100000) {
                     var percentage = 4.6
                 }
                 var amount = parseInt(amount);
-                var discountValue = amount * percentage / 100
+                var discountValue = (amount * percentage);
+                discountValue = discountValue / 100;
+                discountValue = Math.ceil(discountValue);
                 var userAmount = `${amount - discountValue}`;
                 var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
-                userAmount = parseInt(userAmount) - parseInt(remainder);
-                bot.sendMessage(response.userProfile, new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${userAmount-remainder} kyats`))
-                bot.sendMessage(response.userProfile, [new TextMessage(`Do you want to order?`),
+                var latestAmount = parseInt(userAmount) - parseInt(remainder);
+                db.collection('pointsList').add({
+                    viberId: response.userProfile.id,
+                    name: response.userProfile.name,
+                    points: remainder
+                }).then(success=>{
+                    db.collection('orderList').add({
+                        viberId: response.userProfile.id,
+                        name: response.userProfile.name,
+                        price: latestAmount,
+                        operator: operator,
+                        quantity: quantity
+                    }).then(ok => {
+                        
+                    })
+                })
+                bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${latestAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${userAmount} kyats. Do you wish to confirm purchase?`),
+                
                                 new KeyboardMessage({
                     
                             "Type": "keyboard",
@@ -359,7 +404,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "ActionBody": `Hi`,
                                 "Text": "<font color='#000000'>No</font>"
                             }]
-                        }, "", "", "", 7)], ['userInput']);
+                        }, "", "", "", 7)], [ok.id]);
             
             }
         }
