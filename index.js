@@ -381,10 +381,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                         operator: operator,
                         quantity: quantity
                     }).then(ok => {
-                        
-                    })
-                })
-                bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${latestAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${userAmount} kyats. Do you wish to confirm purchase?`),
+                        bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${latestAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${userAmount} kyats. Do you wish to confirm purchase?`),
                 
                                 new KeyboardMessage({
                     
@@ -407,6 +404,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Text": "<font color='#000000'>No</font>"
                             }]
                         }, "", "", "", 7)], [ok.id]);
+                    })
+                })
+                
             
             }
         }
