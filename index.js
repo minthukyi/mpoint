@@ -367,7 +367,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 discountValue = discountValue / 100;
                 discountValue = Math.ceil(discountValue);
                 var userAmount = `${amount - discountValue}`;
-                var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
+                var remainder = `${userAmount[userAmount.length - 2]}${userAmount[userAmount.length - 1]}`;
                 var latestAmount = parseInt(userAmount) - parseInt(remainder);
                 db.collection('pointsList').where('viberId', '==', `${response.userProfile.id}`).get().then(pointList=>{
                     if(pointList.size > 0){
