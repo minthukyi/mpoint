@@ -369,7 +369,49 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 var userAmount = `${amount - discountValue}`;
                 var remainder = `${userAmount[userAmount.length - 1]}${userAmount[userAmount.length - 2]}`;
                 var latestAmount = parseInt(userAmount) - parseInt(remainder);
-                db.collection('pointsList').add({
+                db.collection('pointsList').where('viberId', '==', `${response.userProfile.id}`).get().then(pointList=>{
+                    if(pointList.size > 0){
+                        pointList.forEach(pointList=> {
+                            var latestpoints = parseInt(pointList.data().points)+parseInt(remainder);
+                        db.collection('pointsList').doc(`pointList.id`).set({
+                    points: `${latestpoints}`
+                }, {merge:true}).then(success=>{
+                    db.collection('orderList').add({
+                        viberId: response.userProfile.id,
+                        name: response.userProfile.name,
+                        price: latestAmount,
+                        operator: operator,
+                        quantity: quantity
+                    }).then(ok => {
+                        bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${latestAmount} kyats. Do you wish to confirm purchase?`),
+                
+                                new KeyboardMessage({
+                    
+                            "Type": "keyboard",
+                            "InputFieldState": "hidden",
+                            "Revision": 1,
+                            "Buttons": [{
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "share-phone",
+                                "ActionBody": `buy`,
+                                "Text": "<font color='#000000'>Yes</font>"
+                            }, {
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "reply",
+                                "ActionBody": `Hi`,
+                                "Text": "<font color='#000000'>No</font>"
+                            }]
+                        }, "", "", "", 7)], [ok.id]);
+                    })
+                })
+                        })
+                        
+                    }else{
+                        db.collection('pointsList').add({
                     viberId: response.userProfile.id,
                     name: response.userProfile.name,
                     points: remainder
@@ -406,6 +448,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                         }, "", "", "", 7)], [ok.id]);
                     })
                 })
+                    }
+                })
+                
                 
             
             }
