@@ -91,7 +91,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "ActionBody": `HH`,
                                 "Text": "<font color='#000000'>Register</font>"
                             }]
-                        }]},"","","",7)]);
+                        },"","","",7)]);
             
         })
     }
