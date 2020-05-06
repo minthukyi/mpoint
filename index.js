@@ -518,7 +518,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             }
         }
     }
-        if (userinput === "My Points"){
+        /*if (userinput === "My Points"){
    
                     bot.sendMessage(response.userProfile, [new TextMessage(``),
                             new KeyboardMessage({
@@ -534,6 +534,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "ActionBody": `My Points`,
                                 "Text": "<font color='#000000'>My Points</font>"
                             }]},"","","",7)]);
-    }
+    }*/
             
 });
