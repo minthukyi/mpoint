@@ -78,6 +78,20 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             location: {lat: message.latitude, long: message.longitude}
         }, {merge: true}).then(success=>{
             bot.sendMessage(response.userProfile, new TextMessage('Purchase success! This is your order id: '+id));
+            bot.sendMessage(response.userProfile, new TextMessage('Enjoyed using our service? Register with us for better benefits!'),
+                            new KeyboardMessage ({
+                            "Type": "keyboard",
+                            "InputFieldState": "hidden",
+                            "Revision": 1,
+                            "Buttons": [{
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "reply",
+                                "ActionBody": `HH`,
+                                "Text": "<font color='#000000'>Register</font>"
+                            }]},"","","",7)]);
+            
         })
     }
     if (message.text) {
