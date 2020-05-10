@@ -66,7 +66,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "BgColor": "#99FFFF",
                                 "ActionType": "location-picker",
                                 "ActionBody": `buy`,
-                                "Text": "<font color='#000000'>Yes</font>"
+                                "Text": "<font color='#000000'>Share Location</font>"
                             }]},"","","",7), [[trackingData,message.contactPhoneNumber]]);
     }
     if (message.latitude){
@@ -95,6 +95,9 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             
         })
     }
+        if (message.text === "HH"){
+        bot.sendmessage(response.userProfile, new TextMessage('Registered'));
+        }
     if (message.text) {
         var userInput = message.text;
         if (message.text === "Hi") {
