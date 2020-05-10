@@ -49,6 +49,20 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "Text": "<font color='#ffffff'>Go to shop</font>"
         }]
     }, "", "", "", 7)]);
+    
+    "Type": "keyboard",
+        "InputFieldState": "hidden",
+        "DefaultHeight": false,
+        "BgColor": '#006600',
+        "Buttons": [{
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": '#009900',
+            "ActionType": "reply",
+            "ActionBody": "Hi",
+            "Text": "<font color='#ffffff'>View My Points</font>"
+        }]
+    }, "", "", "", 7)]);
 });
 
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
