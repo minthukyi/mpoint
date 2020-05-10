@@ -37,7 +37,7 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
     bot.sendMessage(userProfile.userProfile, [new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`), new TextMessage(`Today rating persentage are as following: If you order below 50000ks you can get 4.2%, between 50000ks and 100000ks you can get 4.4% and above 100000ks you can get 4.6%. Percentage are not stable, they have daily changes!`, {
         "Type": "keyboard",
-        "InputFieldState": "hidden",
+ 
         "DefaultHeight": false,
         "BgColor": '#006600',
         "Buttons": [{
@@ -58,7 +58,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         bot.sendMessage(response.userProfile, new KeyboardMessage({
                     
                             "Type": "keyboard",
-                            "InputFieldState": "hidden",
+                   
                             "Revision": 1,
                             "Buttons": [{
                                 "Columns": 6,
@@ -81,7 +81,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             bot.sendMessage(response.userProfile, [new TextMessage('Enjoyed using our service? Register with us for better benefits!'),
                             new KeyboardMessage ({
                             "Type": "keyboard",
-                            "InputFieldState": "hidden",
+                           
                             "Revision": 1,
                             "Buttons": [{
                                 "Columns": 6,
@@ -103,7 +103,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
          bot.sendMessage(response.userProfile, new KeyboardMessage({
                     
                             "Type": "keyboard",
-                            "InputFieldState": "hidden",
+                          
                             "Revision": 1,
                             "Buttons": [{
                                 "Columns": 6,
@@ -420,7 +420,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 new KeyboardMessage({
                     
                             "Type": "keyboard",
-                            "InputFieldState": "hidden",
+                          
                             "Revision": 1,
                             "Buttons": [{
                                 "Columns": 6,
@@ -460,7 +460,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 new KeyboardMessage({
                     
                             "Type": "keyboard",
-                            "InputFieldState": "hidden",
+                            
                             "Revision": 1,
                             "Buttons": [{
                                 "Columns": 6,
@@ -513,7 +513,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                         new KeyboardMessage({
 
                             "Type": "keyboard",
-                            "InputFieldState": "hidden",
                             "Revision": 1,
                             "Buttons": [{
                                 "Columns": 6,
