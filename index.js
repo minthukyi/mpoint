@@ -62,7 +62,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
                                 "ActionType": "reply",
                                 "ActionBody": `Hi`,
                                 "Text": "<font color='#000000'>View My Points</font>"
-                            }]},"","","",7)]);
+                            }]},"","","",7));
   
 });
 
