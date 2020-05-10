@@ -48,22 +48,7 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "ActionBody": "Hi",
             "Text": "<font color='#ffffff'>Go to shop</font>"
         }]
-    }, "", "", "", 7)]);
-    
-    bot.sendMessage(response.userProfile, new KeyboardMessage({
-                    
-                            "Type": "keyboard",
-                            "InputFieldState": "hidden",
-                            "Revision": 1,
-                            "Buttons": [{
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "reply",
-                                "ActionBody": `Hi`,
-                                "Text": "<font color='#000000'>View My Points</font>"
-                            }]},"","","",7));
-  
+    }, "", "", "", 7)]);     
 });
 
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
@@ -115,6 +100,20 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         }
     if (message.text) {
         var userInput = message.text;
+         bot.sendMessage(response.userProfile, new KeyboardMessage({
+                    
+                            "Type": "keyboard",
+                            "InputFieldState": "hidden",
+                            "Revision": 1,
+                            "Buttons": [{
+                                "Columns": 6,
+                                "Rows": 1,
+                                "BgColor": "#99FFFF",
+                                "ActionType": "reply",
+                                "ActionBody": `Hi`,
+                                "Text": "<font color='#000000'>View My Points</font>"
+                            }]},"","","",7));
+      
         if (message.text === "Hi") {
             const SAMPLE_RICH_MEDIA = {
                 "ButtonsGroupColumns": 6,
