@@ -95,10 +95,11 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             
         })
     }
-        if (message.text === "HH"){
+       
+    if (message.text) {
+         if (message.text === "HH"){
         bot.sendmessage(response.userProfile, new TextMessage('Registered'));
         }
-    if (message.text) {
         var userInput = message.text;
          bot.sendMessage(response.userProfile, new KeyboardMessage({
                     
@@ -110,10 +111,16 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                                 "Rows": 1,
                                 "BgColor": "#99FFFF",
                                 "ActionType": "reply",
-                                "ActionBody": `Hi`,
+                                "ActionBody": `viewPoints`,
                                 "Text": "<font color='#000000'>View My Points</font>"
                             }]},"","","",7));
-      
+        if (message.text === "viewPoints"){
+            db.collection('pointsList').where('viberId','==',`${response.userProfile.id}`).get().then(relt=>{
+                relt.forEach(points => {
+                    points = points.data().points;
+                    bot.sendMessage(response.userProfile, new TextMessage(`You have ${points} points remaining`));
+                })
+            })
         if (message.text === "Hi") {
             const SAMPLE_RICH_MEDIA = {
                 "ButtonsGroupColumns": 6,
