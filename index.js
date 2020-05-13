@@ -115,7 +115,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             db.collection('pointsList').where('viberId', '==', `${response.userProfile.id}`).get().then(relt => {
                 relt.forEach(points => {
                     points = points.data().points;
-                    bot.sendMessage(response.userProfile, new TextMessage(`You have ${points} points remaining`));
+                    bot.sendMessage(response.userProfile, new TextMessage(`You have ${points} points remaining!`));
                 })
             })
         }
