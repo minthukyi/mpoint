@@ -37,7 +37,7 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
     bot.sendMessage(userProfile.userProfile, [new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`), new TextMessage(`Today rating persentage are as following: If you order below 50000ks you can get 4.2%, between 50000ks and 100000ks you can get 4.4% and above 100000ks you can get 4.6%. Percentage are not stable, they have daily changes!`, {
         "Type": "keyboard",
- 
+
         "DefaultHeight": false,
         "BgColor": '#006600',
         "Buttons": [{
@@ -48,74 +48,71 @@ bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFi
             "ActionBody": "Hi",
             "Text": "<font color='#ffffff'>Go to shop</font>"
         }]
-    }, "", "", "", 7)]);     
+    }, "", "", "", 7)]);
 });
 
 bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     console.log(message);
-    if (message.contactPhoneNumber){
+    if (message.contactPhoneNumber) {
         var trackingData = message.trackingData[0];
         bot.sendMessage(response.userProfile, new KeyboardMessage({
-                    
-                            "Type": "keyboard",
-                   
-                            "Revision": 1,
-                            "Buttons": [{
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "location-picker",
-                                "ActionBody": `buy`,
-                                "Text": "<font color='#000000'>Share Location</font>"
-                            }]},"","","",7), [[trackingData,message.contactPhoneNumber]]);
+
+            "Type": "keyboard",
+
+            "Revision": 1,
+            "Buttons": [{
+                "Columns": 6,
+                "Rows": 1,
+                "BgColor": "#99FFFF",
+                "ActionType": "location-picker",
+                "ActionBody": `buy`,
+                "Text": "<font color='#000000'>Share Location</font>"
+            }]
+        }, "", "", "", 7), [
+            [trackingData, message.contactPhoneNumber]
+        ]);
     }
-    if (message.latitude){
+    if (message.latitude) {
         var trackingData = message.trackingData[0];
         var phone = trackingData[1];
         var id = trackingData[0];
         db.collection('orderList').doc('id').set({
             phone: phone,
-            location: {lat: message.latitude, long: message.longitude}
-        }, {merge: true}).then(success=>{
-            bot.sendMessage(response.userProfile, new TextMessage('Purchase success! This is your order id: '+id));
+            location: {
+                lat: message.latitude,
+                long: message.longitude
+            }
+        }, {
+            merge: true
+        }).then(success => {
+            bot.sendMessage(response.userProfile, new TextMessage('Purchase success! This is your order id: ' + id));
             bot.sendMessage(response.userProfile, [new TextMessage('Enjoyed using our service? Register with us for better benefits!'),
-                            new KeyboardMessage ({
-                            "Type": "keyboard",
-                           
-                            "Revision": 1,
-                            "Buttons": [{
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "reply",
-                                "ActionBody": `HH`,
-                                "Text": "<font color='#000000'>Register</font>"
-                            }]
-                        },"","","",7)]);
-            
+                new KeyboardMessage({
+                    "Type": "keyboard",
+
+                    "Revision": 1,
+                    "Buttons": [{
+                        "Columns": 6,
+                        "Rows": 1,
+                        "BgColor": "#99FFFF",
+                        "ActionType": "reply",
+                        "ActionBody": `HH`,
+                        "Text": "<font color='#000000'>Register</font>"
+                    }]
+                }, "", "", "", 7)
+            ]);
+
         })
     }
-       
+
     if (message.text) {
-         if (message.text === "HH"){
-        bot.sendmessage(response.userProfile, new TextMessage('Registered'));
+        if (message.text === "HH") {
+            bot.sendmessage(response.userProfile, new TextMessage('Registered'));
         }
         var userInput = message.text;
-         bot.sendMessage(response.userProfile, new KeyboardMessage({
-                    
-                            "Type": "keyboard",
-                          
-                            "Revision": 1,
-                            "Buttons": [{
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "reply",
-                                "ActionBody": `viewPoints`,
-                                "Text": "<font color='#000000'>View My Points</font>"
-                            }]},"","","",7));
-        if (message.text === "viewPoints"){
-            db.collection('pointsList').where('viberId','==',`${response.userProfile.id}`).get().then(relt=>{
+        
+        if (message.text === "viewPoints") {
+            db.collection('pointsList').where('viberId', '==', `${response.userProfile.id}`).get().then(relt => {
                 relt.forEach(points => {
                     points = points.data().points;
                     bot.sendMessage(response.userProfile, new TextMessage(`You have ${points} points remaining`));
@@ -207,7 +204,22 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
                 ]
             };
-            bot.sendMessage(response.userProfile, [new TextMessage('Which type of phone top-up do you want to purchase?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)])
+            bot.sendMessage(response.userProfile, [new TextMessage('Which type of phone top-up do you want to purchase?'), new RichMediaMessage(SAMPLE_RICH_MEDIA)]).then(success=>{
+                bot.sendMessage(response.userProfile, new KeyboardMessage({
+
+                    "Type": "keyboard",
+
+                    "Revision": 1,
+                    "Buttons": [{
+                        "Columns": 6,
+                        "Rows": 1,
+                        "BgColor": "#99FFFF",
+                        "ActionType": "reply",
+                        "ActionBody": `viewPoints`,
+                        "Text": "<font color='#000000'>View My Points</font>"
+                    }]
+                }, "", "", "", 7));
+            })
         }
         if (message.text === "Mytel") {
             const SAMPLE_RICH_MEDIA = {
@@ -387,7 +399,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
         }
         if (userInput.includes('Calculate/')) {
             console.log('in calculate');
-          
+
             if (userInput.includes("/Ooredoo") || userInput.includes('/Telenor') || userInput.includes('/MPT') || userInput.includes('/Mytel')) {
                 var userInput = message.text.split('/')
                 var operator = userInput[3]
@@ -409,93 +421,97 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                 var userAmount = `${amount - discountValue}`;
                 var remainder = `${userAmount[userAmount.length - 2]}${userAmount[userAmount.length - 1]}`;
                 var latestAmount = parseInt(userAmount) - parseInt(remainder);
-                db.collection('pointsList').where('viberId', '==', `${response.userProfile.id}`).get().then(pointList=>{
-                    if(pointList.size > 0){
-                        pointList.forEach(pointList=> {
-                            var latestpoints = parseInt(pointList.data().points)+parseInt(remainder);
-                        db.collection('pointsList').doc(`pointList.id`).set({
-                    points: `${latestpoints}`
-                }, {merge:true}).then(success=>{
-                    db.collection('orderList').add({
-                        viberId: response.userProfile.id,
-                        name: response.userProfile.name,
-                        price: latestAmount,
-                        operator: operator,
-                        quantity: quantity
-                    }).then(ok => {
-                        bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! ( 1 point = 1 kyat) Now your cost is ${latestAmount} kyats. Do you wish to confirm purchase?`),
-                
-                                new KeyboardMessage({
-                    
-                            "Type": "keyboard",
-                          
-                            "Revision": 1,
-                            "Buttons": [{
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "share-phone",
-                                "ActionBody": `buy`,
-                                "Text": "<font color='#000000'>Yes</font>"
+                db.collection('pointsList').where('viberId', '==', `${response.userProfile.id}`).get().then(pointList => {
+                    if (pointList.size > 0) {
+                        pointList.forEach(pointList => {
+                            var latestpoints = parseInt(pointList.data().points) + parseInt(remainder);
+                            db.collection('pointsList').doc(`pointList.id`).set({
+                                points: `${latestpoints}`
                             }, {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "reply",
-                                "ActionBody": `Hi`,
-                                "Text": "<font color='#000000'>No</font>"
-                            }]
-                        }, "", "", "", 7)], [ok.id]);
-                    })
-                })
+                                merge: true
+                            }).then(success => {
+                                db.collection('orderList').add({
+                                    viberId: response.userProfile.id,
+                                    name: response.userProfile.name,
+                                    price: latestAmount,
+                                    operator: operator,
+                                    quantity: quantity
+                                }).then(ok => {
+                                    bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! ( 1 point = 1 kyat) Now your cost is ${latestAmount} kyats. Do you wish to confirm purchase?`),
+
+                                        new KeyboardMessage({
+
+                                            "Type": "keyboard",
+
+                                            "Revision": 1,
+                                            "Buttons": [{
+                                                "Columns": 6,
+                                                "Rows": 1,
+                                                "BgColor": "#99FFFF",
+                                                "ActionType": "share-phone",
+                                                "ActionBody": `buy`,
+                                                "Text": "<font color='#000000'>Yes</font>"
+                                            }, {
+                                                "Columns": 6,
+                                                "Rows": 1,
+                                                "BgColor": "#99FFFF",
+                                                "ActionType": "reply",
+                                                "ActionBody": `Hi`,
+                                                "Text": "<font color='#000000'>No</font>"
+                                            }]
+                                        }, "", "", "", 7)
+                                    ], [ok.id]);
+                                })
+                            })
                         })
-                        
-                    }else{
+
+                    } else {
                         db.collection('pointsList').add({
-                    viberId: response.userProfile.id,
-                    name: response.userProfile.name,
-                    points: remainder
-                }).then(success=>{
-                    db.collection('orderList').add({
-                        viberId: response.userProfile.id,
-                        name: response.userProfile.name,
-                        price: latestAmount,
-                        operator: operator,
-                        quantity: quantity
-                    }).then(ok => {
-                        bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${latestAmount} kyats. Do you wish to confirm purchase?`),
-                
-                                new KeyboardMessage({
-                    
-                            "Type": "keyboard",
-                            
-                            "Revision": 1,
-                            "Buttons": [{
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "share-phone",
-                                "ActionBody": `buy`,
-                                "Text": "<font color='#000000'>Yes</font>"
-                            }, {
-                                "Columns": 6,
-                                "Rows": 1,
-                                "BgColor": "#99FFFF",
-                                "ActionType": "reply",
-                                "ActionBody": `Hi`,
-                                "Text": "<font color='#000000'>No</font>"
-                            }]
-                        }, "", "", "", 7)], [ok.id]);
-                    })
-                })
+                            viberId: response.userProfile.id,
+                            name: response.userProfile.name,
+                            points: remainder
+                        }).then(success => {
+                            db.collection('orderList').add({
+                                viberId: response.userProfile.id,
+                                name: response.userProfile.name,
+                                price: latestAmount,
+                                operator: operator,
+                                quantity: quantity
+                            }).then(ok => {
+                                bot.sendMessage(response.userProfile, [new TextMessage(`Your price is ${userAmount} kyats, you save ${remainder} kyats! This ${remainder} kyats will save as points! Now your cost is ${latestAmount} kyats. Do you wish to confirm purchase?`),
+
+                                    new KeyboardMessage({
+
+                                        "Type": "keyboard",
+
+                                        "Revision": 1,
+                                        "Buttons": [{
+                                            "Columns": 6,
+                                            "Rows": 1,
+                                            "BgColor": "#99FFFF",
+                                            "ActionType": "share-phone",
+                                            "ActionBody": `buy`,
+                                            "Text": "<font color='#000000'>Yes</font>"
+                                        }, {
+                                            "Columns": 6,
+                                            "Rows": 1,
+                                            "BgColor": "#99FFFF",
+                                            "ActionType": "reply",
+                                            "ActionBody": `Hi`,
+                                            "Text": "<font color='#000000'>No</font>"
+                                        }]
+                                    }, "", "", "", 7)
+                                ], [ok.id]);
+                            })
+                        })
                     }
                 })
-                
-                
-            
+
+
+
             }
         }
-       
+
         if (userInput.includes("MPT/") || userInput.includes('Telenor/') || userInput.includes('Ooredoo/') || userInput.includes('Mytel/')) {
             bot.sendMessage(response.userProfile, new TextMessage('Please type the amount you want!'), [
                 [`${userInput}`]
@@ -543,6 +559,6 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
             }
         }
     }
-        
-            
+
+
 });
