@@ -121,6 +121,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
                     bot.sendMessage(response.userProfile, new TextMessage(`You have ${points} points remaining`));
                 })
             })
+        }
         if (message.text === "Hi") {
             const SAMPLE_RICH_MEDIA = {
                 "ButtonsGroupColumns": 6,
