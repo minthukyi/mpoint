@@ -35,7 +35,7 @@ if (process.env.NOW_URL || process.env.HEROKU_URL) {
 }
 
 bot.on(BotEvents.CONVERSATION_STARTED, (userProfile, isSubscribed, context, onFinish) => {
-    bot.sendMessage(userProfile.userProfile, [new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop!`), new TextMessage(`Today rating persentage are as following: If you order below 50000ks you can get 4.2%, between 50000ks and 100000ks you can get 4.4% and above 100000ks you can get 4.6%. Percentage are not stable, they have daily changes!`, {
+    bot.sendMessage(userProfile.userProfile, [new TextMessage(`Mingalarpar ${userProfile.userProfile.name} Welcome from M-Points! You can order phone bills cards from our shop! Today rating persentage are as following: If you order below 50000ks you can get 4.2%, between 50000ks and 100000ks you can get 4.4% and above 100000ks you can get 4.6%. Percentage are not stable, they have daily changes!`, {
         "Type": "keyboard",
 
         "DefaultHeight": false,
