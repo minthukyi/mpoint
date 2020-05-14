@@ -24,7 +24,7 @@ var db = admin.firestore();
 const bot = new ViberBot({
     authToken: "4b108d593627d1be-572b518d955f6fd1-d720dc880bcc9bc", // <--- Paste your token here
     name: "M-Points", // <--- Your bot name here
-    avatar: "https://imgur.com/6guPkWz" // It is recommended to be 720x720, and no more than 100kb.
+    avatar: "https://imgur.com/6guPkWz.jpg" // It is recommended to be 720x720, and no more than 100kb.
 });
 
 if (process.env.NOW_URL || process.env.HEROKU_URL) {
